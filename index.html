@@ -1,0 +1,1613 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Francis Courchinoux</title>
+<meta name="description" content="Lead / Senior Environment Artist - Level Art, 29 years shaping worlds for Ubisoft, 505 Games, and his own studio ICA Games.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0e0d0b;
+    --bg-alt:#151310;
+    --surface:#1c1a16;
+    --surface-2:#242019;
+    --line:#332e26;
+    --text:#efe9dd;
+    --text-dim:#b3a992;
+    --muted:#8a806c;
+    --accent:#e0a339;
+    --accent-dim:#8a6a2c;
+    --accent-text:#1a1305;
+    --shadow: 0 20px 50px -20px rgba(0,0,0,.6);
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --bg:#f6f2e8;
+      --bg-alt:#efe9da;
+      --surface:#fffdf8;
+      --surface-2:#f1ead9;
+      --line:#ded4bc;
+      --text:#241f15;
+      --text-dim:#4c4432;
+      --muted:#766c56;
+      --accent:#b3711c;
+      --accent-dim:#e2b968;
+      --accent-text:#fffaf0;
+      --shadow: 0 20px 50px -24px rgba(60,45,10,.25);
+    }
+  }
+  :root[data-theme="light"]{
+    --bg:#f6f2e8;
+    --bg-alt:#efe9da;
+    --surface:#fffdf8;
+    --surface-2:#f1ead9;
+    --line:#ded4bc;
+    --text:#241f15;
+    --text-dim:#4c4432;
+    --muted:#766c56;
+    --accent:#b3711c;
+    --accent-dim:#e2b968;
+    --accent-text:#fffaf0;
+    --shadow: 0 20px 50px -24px rgba(60,45,10,.25);
+  }
+  :root[data-theme="dark"]{
+    --bg:#0e0d0b;
+    --bg-alt:#151310;
+    --surface:#1c1a16;
+    --surface-2:#242019;
+    --line:#332e26;
+    --text:#efe9dd;
+    --text-dim:#b3a992;
+    --muted:#8a806c;
+    --accent:#e0a339;
+    --accent-dim:#8a6a2c;
+    --accent-text:#1a1305;
+    --shadow: 0 20px 50px -20px rgba(0,0,0,.6);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:'Work Sans',system-ui,sans-serif;
+    font-size:16px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{max-width:1440px;margin:0 auto;padding:0 28px;}
+  h1,h2,h3{font-family:'Big Shoulders Display',sans-serif;text-transform:uppercase;letter-spacing:.01em;font-weight:700;text-wrap:balance;margin:0;}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);}
+  .mono{font-family:'JetBrains Mono',monospace;}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:color-mix(in srgb, var(--bg) 86%, transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav > .lang-switch{z-index:1;}
+  main, #summary{position:relative;z-index:1;}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;min-height:60px;gap:8px 20px;padding-top:10px;padding-bottom:10px;padding-right:96px;}
+  .lang-switch{display:flex;gap:2px;position:absolute;top:0;right:20px;height:60px;align-items:center;}
+  .lang-btn{
+    font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.05em;
+    background:none;border:1px solid var(--line);color:var(--text-dim);
+    padding:5px 10px;cursor:pointer;transition:background .15s,color .15s,border-color .15s;
+  }
+  .lang-btn.active{background:var(--accent);border-color:var(--accent);color:var(--accent-text);}
+  .lang-btn:not(.active):hover{border-color:var(--accent);color:var(--accent);}
+  .brand{font-family:'Big Shoulders Display',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:.03em;text-transform:uppercase;white-space:nowrap;}
+  .navlinks{display:flex;flex-wrap:wrap;gap:8px 16px;row-gap:6px;}
+  
+  .navlinks a{font-size:.74rem;letter-spacing:.03em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;white-space:nowrap;padding:4px 0;border-bottom:2px solid transparent;transition:color .15s, border-color .15s;}
+  .navlinks a:hover{color:var(--accent);border-color:var(--accent);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    height:100vh;
+    z-index:1;
+  }
+  .hero-bg{
+    position:fixed;inset:0;z-index:-1;opacity:0;transition:opacity .25s ease;
+  }
+  .hero-bg.is-active{opacity:1;}
+  .sunset-bg{position:fixed;inset:0;z-index:-1;opacity:0;transition:opacity .25s ease;}
+  .sunset-bg img{width:100%;height:100%;object-fit:cover;display:block;}
+  .sunset-bg.is-active{opacity:1;}
+  #testimonials{background:transparent;}
+  #testimonials .quote-card{background:rgba(10,8,5,.55);backdrop-filter:blur(2px);}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;display:block;}
+  .hero-bg::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(90deg, rgba(6,5,3,0) 0%, rgba(6,5,3,0) 100%);
+  }
+  .hero-grid{
+    position:relative;height:100%;z-index:1;
+    display:flex;align-items:center;
+  }
+  .hero-content{
+    max-width:640px;
+    background:rgba(10,8,5,.25);
+    backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.12);
+    padding:36px 38px;
+    margin:0;
+  }
+  .hero-content h1, .hero-content .role, .hero-content p.lede, .hero-content .stat .l{color:#efe9dd;}
+  .hero-content .stat .n{color:var(--accent);}
+  .hero h1{font-size:clamp(2.6rem,6vw,4.6rem);line-height:.98;}
+  .hero .role{font-size:clamp(1.05rem,2vw,1.4rem);color:var(--accent);font-family:'Big Shoulders Display',sans-serif;text-transform:uppercase;letter-spacing:.03em;margin-top:10px;font-weight:600;}
+  .hero p.lede{margin-top:18px;max-width:52ch;color:var(--text-dim);font-size:1.05rem;}
+  .hero-stats{display:flex;gap:28px;margin-top:32px;flex-wrap:wrap;}
+  .stat .n{font-family:'Big Shoulders Display',sans-serif;font-size:2.1rem;font-weight:700;color:var(--accent);line-height:1;}
+  .stat .l{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:4px;}
+  .hero-links{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:11px 20px;border-radius:2px;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600;
+    text-decoration:none;border:1px solid var(--line);transition:transform .15s, border-color .15s, background .15s;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn.primary{background:var(--accent);color:var(--accent-text);border-color:var(--accent);}
+  .btn.primary:hover{background:var(--accent-dim);}
+  .btn.ghost{color:var(--text);}
+  .btn.ghost:hover{border-color:var(--accent);color:var(--accent);}
+
+  .hero-collage{position:relative;aspect-ratio:4/5;border:1px solid var(--line);box-shadow:var(--shadow);}
+  .hero-collage img{width:100%;height:100%;object-fit:cover;}
+  .hero-collage .tag{
+    position:absolute;left:14px;bottom:14px;background:color-mix(in srgb, var(--bg) 78%, transparent);
+    border:1px solid var(--line);padding:6px 12px;font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.05em;color:var(--text-dim);
+  }
+
+  /* ---------- SECTION shell ---------- */
+  section{padding:76px 0;border-bottom:1px solid var(--line);position:relative;z-index:1;background:var(--bg);}
+  section:last-of-type{border-bottom:none;}
+  .section-head{display:flex;flex-direction:column;align-items:flex-start;gap:6px;margin-bottom:38px;}
+  .section-head h2{font-size:clamp(1.7rem,3.4vw,2.5rem);}
+  .section-head > *{order:2;}
+  .section-head .idx{font-family:'JetBrains Mono',monospace;color:var(--muted);font-size:.85rem;order:1;}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:56px;}
+  .about-grid p:not(.eyebrow){color:var(--text-dim);max-width:66ch;}
+  .about-grid p + p{margin-top:14px;}
+  .knowledge-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line);}
+  .knowledge-list li{padding:13px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;font-size:.92rem;}
+  .knowledge-list li span:first-child{color:var(--text);}
+  .knowledge-list li span:last-child{color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:.78rem;text-align:right;}
+
+  /* ---------- EXPERIENCE BG ---------- */
+  #experience{background:transparent;}
+  .exp-bg{position:fixed;inset:0;z-index:-1;overflow:hidden;opacity:0;transition:opacity .25s ease;}
+  .exp-bg.is-active{opacity:1;}
+  .lighting-bg{position:fixed;inset:0;z-index:-1;opacity:0;transition:opacity .25s ease;}
+  .lighting-bg img{width:100%;height:100%;object-fit:cover;display:block;}
+  .lighting-bg.is-active{opacity:1;}
+  .lighting2-bg{position:fixed;inset:0;z-index:-1;opacity:0;transition:opacity .25s ease;}
+  .lighting2-bg img{width:100%;height:100%;object-fit:cover;display:block;}
+  .lighting2-bg.is-active{opacity:1;}
+  .lighting3-bg{position:fixed;inset:0;z-index:-1;opacity:0;transition:opacity .25s ease;}
+  .lighting3-bg img{width:100%;height:100%;object-fit:cover;display:block;}
+  .lighting3-bg.is-active{opacity:1;}
+  .lighting4-bg{position:fixed;inset:0;z-index:-1;opacity:0;transition:opacity .25s ease;}
+  .lighting4-bg img{width:100%;height:100%;object-fit:cover;display:block;}
+  .lighting4-bg.is-active{opacity:1;}
+  .events-bg{position:fixed;inset:0;z-index:-1;opacity:0;overflow:hidden;transition:opacity .25s ease;background:#000;}
+  .events-bg.is-active{opacity:1;}
+  .events-bg iframe{position:absolute;top:50%;left:50%;width:177.78vh;height:56.25vw;min-height:100%;min-width:100%;transform:translate(-50%,-50%);pointer-events:none;}
+  .events-bg::after{content:'';position:absolute;inset:0;background:rgba(6,5,3,.55);}
+  #events{background:transparent;}
+  .events-panel{padding:24px;}
+  .video-grid{margin-top:12px;}
+  .gal-grid.video-grid-3{grid-template-columns:repeat(3,1fr);}
+  @media (max-width:700px){ .gal-grid.video-grid-3{grid-template-columns:1fr;} }
+  #events .gal-grid a, #events .gal-grid .gal-item{border:none;}
+  .music2-bg{position:fixed;inset:0;z-index:-1;opacity:0;overflow:hidden;transition:opacity .25s ease;background:#000;}
+  .music2-bg.is-active{opacity:1;}
+  .music2-bg iframe{position:absolute;top:50%;left:50%;width:177.78vh;height:56.25vw;min-height:100%;min-width:100%;transform:translate(-50%,-50%);pointer-events:none;}
+  .music2-bg::after{content:'';position:absolute;inset:0;background:rgba(6,5,3,.55);}
+  .music-part2{background:transparent;min-height:60vh;padding:60px 0;}
+  .grid-label{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin:0 0 10px;}
+  .audio-list{display:flex;flex-direction:column;gap:16px;}
+  .audio-item iframe{display:block;width:100%;border-radius:2px;}
+  .audio-credit{font-size:.78rem;color:var(--muted);margin-top:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .audio-credit a{color:var(--muted);text-decoration:none;}
+  .audio-credit a:hover{color:var(--text-dim);}
+  .video-item{position:relative;display:block;}
+  .video-item img{width:100%;height:100%;object-fit:cover;display:block;}
+  #lighting3{background:transparent;padding:40px 0;}
+  .levelart-bg{position:fixed;inset:0;z-index:-1;opacity:0;transition:opacity .25s ease;}
+  .levelart-bg img{width:100%;height:100%;object-fit:cover;display:block;}
+  .levelart-bg.is-active{opacity:1;}
+  #levelart{background:transparent;}
+  .levelart2-bg{position:fixed;inset:0;z-index:-1;opacity:0;transition:opacity .25s ease;}
+  .levelart2-bg img{width:100%;height:100%;object-fit:cover;display:block;}
+  .levelart2-bg.is-active{opacity:1;}
+  .levelart3-bg{position:fixed;inset:0;z-index:-1;opacity:0;transition:opacity .25s ease;}
+  .levelart3-bg img{width:100%;height:100%;object-fit:cover;display:block;}
+  .levelart3-bg.is-active{opacity:1;}
+  .levelart4-bg{position:fixed;inset:0;z-index:-1;opacity:0;transition:opacity .25s ease;}
+  .levelart4-bg img{width:100%;height:100%;object-fit:cover;display:block;}
+  .levelart4-bg.is-active{opacity:1;}
+  .levelart5-bg{position:fixed;inset:0;z-index:-1;opacity:0;transition:opacity .25s ease;}
+  .levelart5-bg img{width:100%;height:100%;object-fit:cover;display:block;}
+  .levelart5-bg.is-active{opacity:1;}
+  #lighting2{background:transparent;padding:40px 0;}
+  #lighting{background:transparent;}
+  .exp-bg img{width:100%;height:100%;object-fit:cover;transform-origin:center center;will-change:transform;}
+  .exp-bg::after{content:'';position:absolute;inset:0;background:rgba(6,5,3,0);}
+  #experience > .wrap{position:relative;z-index:1;}
+  .exp-panel{background:rgba(10,8,5,.45);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.12);padding:32px clamp(20px,4vw,40px);max-width:640px;margin:0;}
+  .gb-panel{background:rgba(10,8,5,.45);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.12);padding:24px clamp(18px,4vw,32px);max-width:720px;margin-bottom:16px;}
+  .gb-hero-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;align-items:start;margin-bottom:16px;}
+  .gb-hero-row .gb-panel{grid-column:span 3;margin-bottom:0;}
+  .gb-hero-img{grid-column:span 1;aspect-ratio:16/10;overflow:hidden;border:1px solid var(--line);background:var(--surface-2);}
+  .gb-hero-img .gal-item{width:100%;height:100%;}
+  .gb-hero-img img{width:100%;height:100%;object-fit:cover;display:block;}
+  #lighting .gal-grid{grid-template-columns:repeat(4,1fr);}
+  @media (max-width:700px){ .gb-hero-row{grid-template-columns:1fr;} .gb-hero-row .gb-panel{grid-column:1;} .gb-hero-img{grid-column:1;} #lighting .gal-grid{grid-template-columns:repeat(2,1fr);} }
+
+  /* ---------- TIMELINE ---------- */
+  .timeline{position:relative;margin-left:6px;padding-left:34px;border-left:1px solid var(--line);}
+  .tl-item{position:relative;padding-bottom:34px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:'';position:absolute;left:-39px;top:5px;width:9px;height:9px;border-radius:50%;
+    background:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb, var(--accent) 20%, transparent);
+  }
+  .tl-item .yr{font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:.8rem;letter-spacing:.03em;}
+  .tl-item h3{font-size:1.3rem;margin-top:4px;text-transform:none;font-weight:700;}
+  .tl-item .co{color:var(--text-dim);font-size:.92rem;margin-top:2px;}
+  .tl-item p{color:var(--muted);font-size:.92rem;max-width:70ch;margin-top:8px;}
+
+  /* ---------- GAMES ---------- */
+  .games{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px;}
+  .game-card{background:var(--surface);border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;transition:border-color .15s, transform .15s;}
+  .game-card:hover{border-color:var(--accent-dim);transform:translateY(-3px);}
+  .game-card .thumb{height:190px;overflow:hidden;background:var(--surface-2);}
+  .game-card .thumb img{width:100%;height:100%;object-fit:cover;}
+  .game-card .thumb.cover{background:var(--surface-2);}
+  .game-card .body{padding:16px 18px 20px;}
+  .game-card h3{font-size:1.15rem;text-transform:none;font-weight:700;}
+  .game-card .meta{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--accent);letter-spacing:.04em;margin-top:6px;text-transform:uppercase;}
+  .game-card .desc{color:var(--muted);font-size:.86rem;margin-top:8px;}
+  .proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;}
+  .proj-card{background:var(--surface);border:1px solid var(--line);padding:16px 14px;display:flex;align-items:center;justify-content:center;text-align:center;min-height:64px;transition:border-color .15s;}
+  .proj-card:hover{border-color:var(--accent-dim);}
+  .proj-card span{font-size:.86rem;color:var(--text-dim);line-height:1.3;}
+
+  /* ---------- GALLERY ---------- */
+  .gallery-block{margin-bottom:52px;}
+  .gallery-block:last-child{margin-bottom:0;}
+  .gallery-block .gb-head{display:flex;align-items:baseline;gap:14px;margin-bottom:16px;flex-wrap:wrap;}
+  .gallery-block h3{font-size:1.35rem;text-transform:uppercase;}
+  .gallery-block .gb-note{color:var(--muted);font-size:.85rem;max-width:70ch;}
+  .modeling-block{margin-bottom:36px;}
+  .modeling-head{max-width:70ch;margin-bottom:16px;}
+  .modeling-head h3{font-size:1.15rem;margin-bottom:6px;}
+  .modeling-row-title{font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin:20px 0 10px;}
+  .modeling-row{display:grid;grid-template-columns:300px 1fr;gap:20px;align-items:center;}
+  .modeling-fixed-img{flex:0 0 auto;}
+  .modeling-fixed-img img{width:100%;height:auto;display:block;}
+  @media (max-width:700px){ .modeling-row{grid-template-columns:1fr;} .modeling-fixed-img img{height:180px;} }
+  .filmstrip{overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(90deg,transparent,#000 40px,#000 calc(100% - 40px),transparent);mask-image:linear-gradient(90deg,transparent,#000 40px,#000 calc(100% - 40px),transparent);}
+  .filmstrip-track{display:flex;gap:12px;width:max-content;animation:filmstrip-scroll linear infinite;}
+  .filmstrip:hover .filmstrip-track{animation-play-state:paused;}
+  .filmstrip .gal-item{flex:0 0 auto;width:300px;}
+  .filmstrip .gal-item img{width:100%;height:200px;object-fit:cover;display:block;}
+  @keyframes filmstrip-scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  @media (max-width:700px){ .filmstrip .gal-item{width:220px;} .filmstrip .gal-item img{height:150px;} }
+  .gb-panel .gb-note{color:var(--text-dim);}
+  .gal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;}
+  .gal-grid a{display:block;aspect-ratio:16/10;overflow:hidden;border:1px solid var(--line);background:var(--surface-2);}
+  .gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease;}
+  .gal-grid a:hover img{transform:scale(1.06);}
+
+  /* ---------- MUSIC ---------- */
+  .music-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;}
+  .software-list{display:flex;flex-direction:column;gap:14px;}
+  .software-item{border:1px solid var(--line);padding:14px 16px;background:var(--surface);}
+  .software-item .row{display:flex;justify-content:space-between;font-size:.85rem;}
+  .software-item .sw-name{font-weight:600;}
+  .software-item .sw-level{font-family:'JetBrains Mono',monospace;color:var(--accent);font-size:.72rem;text-transform:uppercase;}
+  .release-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line);}
+  .release-list li{padding:13px 0;border-bottom:1px solid var(--line);}
+  .release-list .r-title{font-weight:600;}
+  .release-list .r-meta{color:var(--muted);font-size:.82rem;margin-top:3px;}
+
+  /* ---------- TESTIMONIALS ---------- */
+  .quote-scroll{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;}
+  .quote-card{background:var(--surface);border:1px solid var(--line);padding:22px 24px;position:relative;}
+  .quote-card::before{content:'\201C';position:absolute;top:8px;left:16px;font-family:'Big Shoulders Display',sans-serif;font-size:2.6rem;color:var(--accent-dim);line-height:1;}
+  .quote-card p{color:var(--text-dim);font-size:.9rem;margin:14px 0 14px;padding-top:6px;}
+  .quote-card .who{font-size:.8rem;}
+  .quote-card .who b{color:var(--text);}
+  .quote-card .who span{display:block;color:var(--muted);font-size:.76rem;margin-top:2px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:60px 0 46px;background:var(--bg-alt);position:relative;z-index:1;}
+  .foot-grid{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;}
+  footer h2{font-size:clamp(1.8rem,4vw,3rem);}
+  .foot-links{display:flex;gap:14px;flex-wrap:wrap;}
+  .foot-bottom{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--muted);font-size:.78rem;flex-wrap:wrap;gap:10px;}
+
+  @media (max-width:860px){
+    .hero-content{margin:40px 16px;padding:26px 22px;max-width:none;}
+    .about-grid, .music-grid{grid-template-columns:1fr;gap:30px;}
+  }
+</style>
+
+<nav>
+  <div class="lang-switch" role="group" aria-label="Language">
+    <button type="button" class="lang-btn" data-lang="en">EN</button>
+    <button type="button" class="lang-btn" data-lang="fr">FR</button>
+  </div>
+  <div class="wrap">
+    <div class="brand">F. Courchinoux</div>
+    <div class="navlinks">
+      <span class="i18n" data-fr="<a href=&quot;#about&quot;>À propos</a>"><a href="#about">About</a></span>
+      <span class="i18n" data-fr="<a href=&quot;#summary&quot;>Résumé</a>"><a href="#summary">Summary</a></span>
+      <span class="i18n" data-fr="<a href=&quot;#experience&quot;>Expérience</a>"><a href="#experience">Experience</a></span>
+      <span class="i18n" data-fr="<a href=&quot;#games&quot;>Jeux</a>"><a href="#games">Games</a></span>
+      <span class="i18n" data-fr="<a href=&quot;#lighting&quot;>Éclairage</a>"><a href="#lighting">Lighting</a></span>
+      <span class="i18n" data-fr="<a href=&quot;#levelart&quot;>Level Art</a>"><a href="#levelart">Level Art</a></span>
+      <span class="i18n" data-fr="<a href=&quot;#modeling&quot;>Modélisation</a>"><a href="#modeling">Modeling</a></span>
+      <span class="i18n" data-fr="<a href=&quot;#events&quot;>Événements</a>"><a href="#events">Events</a></span>
+      <span class="i18n" data-fr="<a href=&quot;#music&quot;>Musique</a>"><a href="#music">Music</a></span>
+      <span class="i18n" data-fr="<a href=&quot;#personality&quot;>Tests de personnalité</a>"><a href="#personality">Personality Tests</a></span>
+      <span class="i18n" data-fr="<a href=&quot;#testimonials&quot;>Témoignages</a>"><a href="#testimonials">Testimonials</a></span>
+      <span class="i18n" data-fr="<a href=&quot;#contact&quot;>Contact</a>"><a href="#contact">Contact</a></span>
+      <a href="https://cvdesignr.com/p/5dff3aa4934c2" target="_blank" rel="noopener">CV</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero-bg"><img src="images/img-0001.jpg" alt="HELIX platform, Unreal Engine 5 environment render"></div>
+<header class="hero" id="about">
+  
+  <div class="wrap hero-grid">
+    <div class="hero-content">
+      <p class="eyebrow"><span class="i18n" data-fr="Portfolio &mdash; 1996&ndash;Aujourd'hui">Portfolio &mdash; 1996&ndash;Present</span></p>
+      <h1>Francis<br>Courchinoux</h1>
+      <p class="role"><span class="i18n" data-fr="Lead / Senior Environment Artist &mdash; Level Art">Lead / Senior Environment Artist &mdash; Level Art</span></p>
+      <p class="lede"><span class="i18n" data-fr="Vingt-neuf ans à construire des mondes de jeu &mdash; de Flashback chez Ubisoft, au shooter sci-fi en monde ouvert Hawken, une aventure de survie de 16km&amp;sup2; nommée Uayeb réalisée entièrement en solo, et à la tête de l'équipe direction artistique environnement sur la plateforme HELIX (façon GTA RP) avec Unreal Engine 5.">Twenty-nine years building game worlds &mdash; from Ubisoft's Flashback, to open-world sci-fi shooter Hawken, a 16km&sup2; survival adventure called Uayeb made entirely solo, and leading the environment art team on the HELIX platform (GTA RP like) with Unreal Engine 5.</span></p>
+      <div class="hero-stats">
+        <div class="stat"><div class="n">29</div><div class="l"><span class="i18n" data-fr="Ans dans le jeu vidéo">Years in games</span></div></div>
+        <div class="stat"><div class="n">33</div><div class="l"><span class="i18n" data-fr="Jeux sortis">Shipped titles</span></div></div>
+        <div class="stat"><div class="n">20</div><div class="l"><span class="i18n" data-fr="Ans en tant qu'artiste environnement">Years as env. artist</span></div></div>
+        <div class="stat"><div class="n">16km&sup2;</div><div class="l"><span class="i18n" data-fr="Monde ouvert en solo">Solo open world</span></div></div>
+      </div>
+      <div class="hero-links">
+        <a class="btn primary" href="#games"><span class="i18n" data-fr="Voir le travail">View the work</span></a>
+        <a class="btn ghost" href="https://www.artstation.com/frux" target="_blank" rel="noopener">Artstation</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/fcourchinoux" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="summary">
+  <div class="wrap about-grid">
+    <div>
+      <div class="section-head" style="margin-bottom:20px;">
+        <h2><span class="i18n" data-fr="Résumé">Summary</span></h2>
+        <span class="idx mono">01</span>
+      </div>
+      
+      <div style="display:flex;flex-direction:column;gap:14px;margin:0 0 22px;"><div><div class="eyebrow" style="margin-bottom:4px;color:var(--accent);"><span class="i18n" data-fr="ART">ART</span></div><div style="color:var(--text-dim);"><span class="i18n" data-fr="20 ans à créer des environnements 3D et du level art pour le jeu vidéo">20 years making 3D game environments and level art</span></div></div><div><div class="eyebrow" style="margin-bottom:4px;color:var(--accent);"><span class="i18n" data-fr="Assurance Qualité">Quality Assurance</span></div><div style="color:var(--text-dim);"><span class="i18n" data-fr="9 ans d'assurance qualité">9 years of Quality Assurance</span></div></div></div><p class="eyebrow" style="margin:22px 0 10px;color:var(--accent);"><span class="i18n" data-fr="Résumé des jeux sortis">Released Games Summary</span></p><ul style="list-style:disc;margin:0;padding-left:20px;color:var(--text-dim);display:flex;flex-direction:column;gap:4px;"><li><span class="i18n" data-fr="2 jeux Ubisoft sortis en tant que Lead/Senior Environment Artist - Level Artist">2 Ubisoft games shipped as Lead/Senior Environment Artist - Level Artist</span></li><li><span class="i18n" data-fr="2 jeux Ubisoft sortis en tant qu'Environment Artist / Level Artist">2 Ubisoft games shipped as Environment Artist / Level Artist</span></li><li><span class="i18n" data-fr="22 jeux AAA sortis en tant que QA Lead et QA Tester">22 AAA games shipped as QA Lead and QA Tester</span></li><li><span class="i18n" data-fr="7 jeux indépendants et de taille moyenne sortis en tant que Lead/Senior Environment Artist - Level Artist">7 Indies and medium-sized games shipped as Lead/Senior Environment Artist - Level Artist</span></li></ul><p class="eyebrow" style="margin:22px 0 10px;color:var(--accent);"><span class="i18n" data-fr="Jeux sortis en tant que Lead/Senior Environment Artist - Level Artist">Released Games as Lead/Senior Environment Artist - Level Artist</span></p><ul style="list-style:disc;margin:0;padding-left:20px;color:var(--text-dim);display:flex;flex-direction:column;gap:4px;"><li><b style="color:var(--text)">Hawken Reborn</b> (<span class="i18n" data-fr="Monde ouvert sci-fi / 505 Games">Sci-Fi Open world / 505 Games</span>)</li><li><b style="color:var(--text)">UAYEB - Purgatory - Episode 2</b> (<span class="i18n" data-fr="prototype, 5 heures de jeu">prototype, 5 hours of the game</span>)</li><li><b style="color:var(--text)">UAYEB - The Dry Land - Episode 1</b> (<span class="i18n" data-fr="35 heures de jeu / 16km&sup2; de monde ouvert créé seul">35 hours of gameplay / 16km&sup2; open world created alone</span>)</li><li><b style="color:var(--text)">Flashback</b> (<span class="i18n" data-fr="création de tous les niveaux et environnements du jeu / produit par Ubisoft">created all game levels and environments / produced by Ubisoft</span>)</li><li><b style="color:var(--text)">AMY</b> (<span class="i18n" data-fr="création de la moitié des niveaux et environnements du jeu / produit par Lexis Numérique">created half of the game levels and environments / produced by Lexis Numerique</span>)</li><li><b style="color:var(--text)">Arthur and the Minimoys</b> (<span class="i18n" data-fr="Luc Besson / Europacorp">Luc Besson / Europacorp</span>)</li><li><b style="color:var(--text)">Cine Studio Party</b> (<span class="i18n" data-fr="Ubisoft">Ubisoft</span>)</li><li><b style="color:var(--text)">Horzez 2</b> (<span class="i18n" data-fr="Ubisoft">Ubisoft</span>)</li><li><b style="color:var(--text)">Horzez</b> (<span class="i18n" data-fr="Ubisoft">Ubisoft</span>)</li></ul>
+      
+    <p class="eyebrow" style="margin:22px 0 10px;color:var(--accent);"><span class="i18n" data-fr="Productions de jeux vidéo AA/AAA">AA/AAA Video Games Productions Worked On</span></p><ul style="list-style:disc;margin:0;padding-left:20px;color:var(--text-dim);columns:2;column-gap:24px;font-size:.92rem;"><li style="break-inside:avoid;">UAYEB - The Mayan Adventure</li><li style="break-inside:avoid;">Helix Game</li><li style="break-inside:avoid;">Transhumance</li><li style="break-inside:avoid;">Hawken Reborn</li><li style="break-inside:avoid;">BGE2</li><li style="break-inside:avoid;">UAYEB - Purgatory</li><li style="break-inside:avoid;">UAYEB - The Dry Land</li><li style="break-inside:avoid;">Flashback</li><li style="break-inside:avoid;">Amy</li><li style="break-inside:avoid;">Arthur and the Minimoys</li><li style="break-inside:avoid;">Cine Studios</li><li style="break-inside:avoid;">Horzes 2</li><li style="break-inside:avoid;">Horzes 1</li><li style="break-inside:avoid;">Scarface</li><li style="break-inside:avoid;">Swat 4 Expansion</li><li style="break-inside:avoid;">Crash Bandicoot TTR</li><li style="break-inside:avoid;">Swat 4</li><li style="break-inside:avoid;">Leisure Suit Larry</li><li style="break-inside:avoid;">Ground Control 2</li><li style="break-inside:avoid;">The Xfiles</li><li style="break-inside:avoid;">Homeworld 2</li><li style="break-inside:avoid;">Battle Star Galactica</li><li style="break-inside:avoid;">Hunter the Reckoning</li><li style="break-inside:avoid;">Mace Griffin Bounty Hunter</li><li style="break-inside:avoid;">BloodRayne</li><li style="break-inside:avoid;">Casino Empire</li><li style="break-inside:avoid;">The Scorpion King</li><li style="break-inside:avoid;">Warcraft III</li><li style="break-inside:avoid;">Alien vs Predator II</li><li style="break-inside:avoid;">Throne of Darkness</li><li style="break-inside:avoid;">Diablo II Exp</li><li style="break-inside:avoid;">Half-Life</li><li style="break-inside:avoid;">Gunman Chronicles (Half Life)</li><li style="break-inside:avoid;">Half Life (Blue Shift)</li><li style="break-inside:avoid;">Zeus</li><li style="break-inside:avoid;">C4</li></ul><p class="eyebrow" style="margin:22px 0 10px;color:var(--accent);"><span class="i18n" data-fr="Formation">Studies</span></p><p><span class="i18n" data-fr="Premières études d'art 3D en 1996 avec 3D Studio ;<br>certificat 3DS Max à l'Art House School, Dublin 2000 ;<br>formations en gestion de projet et leadership chez Vivendi Universal Games, Dublin 2001 ;<br>formation modélisation et art pour le jeu vidéo à FuturePoly, Seattle 2014 ;<br>également musicien de longue date &mdash; guitariste, batteur, chanteur et compositeur.">First 3D art studies in 1996 with 3D Studio;<br>3DS Max Certificate at Art House School, Dublin 2000;<br>Project management and leadership formations at Vivendi Universal Games, Dublin 2001;<br>Modeling and art for games formation at FuturePoly, Seattle 2014;<br>Also a lifelong musician &mdash; guitarist, drummer, singer and composer.</span></p></div>
+    <div>
+      <p class="eyebrow" style="margin-bottom:14px;color:var(--accent);"><span class="i18n" data-fr="Compétences clés">Core knowledge</span></p>
+      <ul class="knowledge-list">
+        <li><span class="i18n" data-fr="Moteurs">Engines</span><span>UE5 &middot; UE4 &middot; UE3 &middot; CryEngine &middot; Unity &middot; Phyre &middot; Jade &middot; Voyager</span></li>
+        <li><span class="i18n" data-fr="Environnement &amp; Level Art">Environment &amp; Level Art</span><span>Composition &middot; props &middot; vegetation &middot; terrain</span></li>
+        <li><span class="i18n" data-fr="Modélisation">Modeling</span><span>High/low poly &middot; sculpting &middot; UVs &middot; baking &middot; LODs</span></li>
+        <li><span class="i18n" data-fr="Éclairage &amp; FX">Lighting &amp; FX</span><span>Dynamic lighting &middot; particles &middot; post-process</span></li>
+        <li><span class="i18n" data-fr="Logiciels">Software</span><span>3DS Max &middot; ZBrush &middot; Substance Painter &middot; Photoshop</span></li>
+        <li><span class="i18n" data-fr="Son">Sound</span><span>Wwise &middot; Ableton Live &middot; music composition</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="exp-bg"><img src="images/img-0002.jpg" alt=""></div>
+<section id="experience">
+  
+  <div class="wrap">
+    <div class="exp-panel">
+    <div class="section-head">
+      <span class="i18n" data-fr="<h2>Expérience</h2>"><h2>Experience</h2></span>
+      <span class="idx mono">02</span>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="yr">2026 &mdash; Present</div>
+        <h3><span class="i18n" data-fr="Directeur créatif / Main Level Artist">Creative Director / Main Level Artist</span></h3>
+        <div class="co">ICA Games &mdash; Uayeb: The Mayan Adventure</div>
+        <p><span class="i18n" data-fr="Création d'un jeu de survie coop/PvP autour de la civilisation maya, en Unreal Engine 5.">Creating a coop/PvP survival adventure game around the Maya civilization in Unreal Engine 5.</span></p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">Dec 2024 &mdash; Sept 2026</div>
+        <h3><span class="i18n" data-fr="Lead / Senior Environment Artist &mdash; Level Art">Lead / Senior Environment Artist &mdash; Level Art</span></h3>
+        <div class="co">Hypersonic Labs - Solara Bay and Pacifica maps</div>
+        <p><span class="i18n" data-fr="Création de cartes en monde ouvert pour la plateforme HELIX en Unreal Engine 5, à la tête de l'équipe Environnement, et réalisation du level art sur deux grandes villes (LA et Miami) pour un jeu façon GTA RP.">Making open-world maps for the HELIX game platform in Unreal Engine 5, leading the Environment team and building level art on two big cities (LA and Miami) on a RP GTA like game.</span></p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">Mar &mdash; Jun 2024</div>
+        <h3><span class="i18n" data-fr="Senior Environment Artist">Senior Environment Artist</span></h3>
+        <div class="co">UKIYO &mdash; Transhumance prototype</div>
+        <p><span class="i18n" data-fr="Seul responsable de l'environnement pendant 3 mois : terrain avec Errant Landscape, sculpture de landscape UE5, matériaux multi-couches, props, Speedtree, Megascans, pipeline complet 3ds Max / Substance Painter / Photoshop.">Sole environment owner for 3 months: terrain with Errant Landscape, UE5 landscape sculpting, multi-layer materials, props, Speedtree, Megascans, full 3ds Max / Substance Painter / Photoshop pipeline.</span></p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2019 &mdash; 2020</div>
+        <h3><span class="i18n" data-fr="Tools Support Specialist">Tools Support Specialist</span></h3>
+        <div class="co">Ubisoft Montpelier &mdash; Beyond Good And Evil 2</div>
+        <p><span class="i18n" data-fr="Test des outils de développement pour l'Art dans le moteur Ubisoft Voyager.">Testing the development tools for Art in Ubisoft Voyager Engine.</span></p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2020 &mdash; 2023</div>
+        <h3><span class="i18n" data-fr="Lead / Senior Environment Artist">Lead / Senior Environment Artist</span></h3>
+        <div class="co">DR-Studios / 505 Games &mdash; Hawken Reborn</div>
+        <p><span class="i18n" data-fr="Environnements sur 4 zones (grottes, fermes, vaisseaux écrasés, littoral, usines) pour un shooter sci-fi en monde ouvert sous UE4. Supervision du travail de l'équipe, recrutement, collaboration directe avec le Directeur Artistique et les Level Designers.">Environments across 4 zones (caves, farms, crashed ships, coastline, factories) for a sci-fi open-world shooter in UE4. Reviewed team output, led recruitment, worked directly with the Art Director and Level Designers.</span></p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2018 &mdash; 2019</div>
+        <h3><span class="i18n" data-fr="Creative Director / Senior Environment Artist">Creative Director / Senior Environment Artist</span></h3>
+        <div class="co">ICA Games &mdash; UAYEB: Purgatory, Episode 2</div>
+        <p><span class="i18n" data-fr="Prototype de 5 à 6 heures réalisé seul sous CryEngine : modélisation, texturing, level art, éclairage, FX, game &amp; level design, code, UI, musique et son.">5&ndash;6 hour prototype built alone in CryEngine: modeling, texturing, level art, lighting, FX, game &amp; level design, code, UI, music and sound.</span></p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2014 &mdash; 2018</div>
+        <h3><span class="i18n" data-fr="Creative Director / Senior Environment Artist">Creative Director / Senior Environment Artist</span></h3>
+        <div class="co">ICA Games &mdash; UAYEB: The Dry Land, Episode 1</div>
+        <p><span class="i18n" data-fr="16km&amp;sup2; de monde ouvert survie/puzzle/FPS réalisé seul sous CryEngine, sorti sur Steam en janvier 2018. Histoire, art, code, UI, musique, son et marketing &mdash; de bout en bout.">16km&sup2; open-world survival/puzzle/FPS built alone in CryEngine, released on Steam January 2018. Story, art, code, UI, music, sound and marketing &mdash; end to end.</span></p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2012 &mdash; 2013</div>
+        <h3><span class="i18n" data-fr="Lead Environment Artist">Lead Environment Artist</span></h3>
+        <div class="co">VectorCell &mdash; Flashback (Ubisoft)</div>
+        <p><span class="i18n" data-fr="À la tête de l'équipe environnement sur le reboot de Flashback (Ubisoft) pour PS3/Xbox360 en Unreal Engine 3. Modélisation, texturing, composition de niveaux, éclairage, matériaux, FX.">Led the environment team on Ubisoft's Flashback reboot for PS3/Xbox360 in Unreal Engine 3. Modeling, texturing, level composition, lighting, materials, FX.</span></p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2010 &mdash; 2011</div>
+        <h3><span class="i18n" data-fr="Senior Environment Artist">Senior Environment Artist</span></h3>
+        <div class="co">VectorCell &mdash; A.M.Y.</div>
+        <p><span class="i18n" data-fr="A créé la moitié des environnements du jeu sur PS3/Xbox360 en Phyre Engine.">Created half of the game's environments on PS3/Xbox360 in Phyre Engine.</span></p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2008 &mdash; 2009</div>
+        <h3><span class="i18n" data-fr="Lead Environment Artist">Lead Environment Artist</span></h3>
+        <div class="co">Phoenix Studio &mdash; Arthur and the Minimoys, Cine Studio Party (Ubisoft)</div>
+        <p><span class="i18n" data-fr="À la tête de l'équipe environnement sur des jeux DS/Wii en Jade Engine.">Led environment team on DS/Wii titles in Jade Engine.</span></p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2007 &mdash; 2008</div>
+        <h3><span class="i18n" data-fr="Environment Artist">Environment Artist</span></h3>
+        <div class="co">Phoenix Studio &mdash; Horzez, Horzez 2 (Ubisoft)</div>
+        <p><span class="i18n" data-fr="Environnements sur des jeux Wii en Jade Engine.">Environments on Wii titles in Jade Engine.</span></p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2000 &mdash; 2006</div>
+        <h3><span class="i18n" data-fr="QA Lead">QA Lead</span></h3>
+        <div class="co">Vivendi Universal Games - 22 AAA games</div>
+        <p><span class="i18n" data-fr="À la tête d'équipes de test de localisation sur 22 productions AAA, dont Scarface, Half-Life, Diablo II, Homeworld 2 et Warcraft III.">Led localization testing teams across 22 AAA productions, including Scarface, Half-Life, Diablo II, Homeworld 2 and Warcraft III.</span></p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">1996 &mdash; 1998</div>
+        <h3><span class="i18n" data-fr="Sound Designer / Compositeur / Artiste 3D">Sound Designer / Music Composer / 3D Artist</span></h3>
+        <div class="co">Excess Development &mdash; C4</div>
+        <p><span class="i18n" data-fr="Deux ans sur un shoot-’em-up sci-fi : bande-son, SFX et premiers travaux 3D.">Two years on a sci-fi shoot-'em-up: soundtrack, SFX and early 3D art.</span></p>
+      </div>
+    
+    </div>
+  </div>
+</section>
+
+<section id="games">
+  <div class="wrap">
+    <div class="section-head">
+      <h2><span class="i18n" data-fr="Jeux et projets">Games and projects</span></h2>
+      <span class="idx mono">03</span>
+    </div>
+    <p class="eyebrow" style="margin:0 0 18px;color:var(--accent);"><span class="i18n" data-fr="Environnement / Level Art">Environment / Level Art</span></p>
+    <div class="games">
+      <div class="game-card">
+        <div class="thumb"><button type="button" class="gal-item" data-full="images/img-0003.jpg" data-caption="UAYEB — The Mayan Adventure— main menu"><img src="images/img-0004.jpg" alt="UAYEB — The Mayan Adventure" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></button></div>
+        <div class="body"><h3>UAYEB &mdash; The Mayan Adventure</h3><div class="meta">ICA Games &middot; UE5 &middot; 2024&ndash;present</div><div class="desc"><span class="i18n" data-fr="Aventure de survie coop/PvP dans la civilisation maya &mdash; en cours de développement.">Coop/PvP survival adventure set in the Maya civilization &mdash; work in progress.</span></div></div>
+      </div>
+      <div class="game-card">
+        <div class="thumb"><button type="button" class="gal-item" data-full="images/img-0005.jpg" data-caption="Helix &mdash; Pacifica map"><img src="images/img-0006.jpg" alt="Helix &mdash; Pacifica map" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></button></div>
+        <div class="body"><h3>Helix Game</h3><div class="meta">Hypersonic Labs &middot; UE5 &middot; 2024&ndash;present</div><div class="desc"><span class="i18n" data-fr="Cartes en monde ouvert pour la plateforme HELIX.<br>&mdash; Pacifica map.<br>&mdash; Solarabay map.">Open-world maps for the HELIX platform.<br>&mdash; Pacifica map.<br>&mdash; Solarabay map.</span></div></div></div>
+      
+      <div class="game-card">
+        <div class="thumb"><button type="button" class="gal-item" data-full="images/img-0007.jpg" data-caption="Transhumance" style="display:block;width:100%;height:100%;padding:0;border:0;background:none;"><img src="images/img-0008.jpg" alt="Transhumance" loading="lazy"></button></div>
+        <div class="body"><h3>Transhumance</h3><div class="meta">UKIYO &middot; UE5 &middot; 2024</div><div class="desc"><span class="i18n" data-fr="Prototype d'environnement de 3 mois réalisé en solo : terrain, végétation, rivières, props, éclairage.">3-month solo environment prototype: terrain, foliage, rivers, props, lighting.</span></div></div>
+      </div>
+      <div class="game-card">
+        <div class="thumb"><button type="button" class="gal-item" data-full="images/img-0009.jpg" data-caption="Hawken Reborn" style="display:block;width:100%;height:100%;padding:0;border:0;background:none;"><img src="images/img-0010.jpg" alt="Hawken Reborn" loading="lazy"></button></div>
+        <div class="body"><h3>Hawken Reborn</h3><div class="meta">505 Games &middot; UE4 &middot; 2020&ndash;2023</div><div class="desc"><span class="i18n" data-fr="Shooter sci-fi en monde ouvert &mdash; 4 zones d'environnement, des vaisseaux écrasés aux usines côtières.">Sci-fi open-world shooter &mdash; 4 environment zones, from crashed ships to coastal factories.</span></div></div>
+      </div>
+      <div class="game-card">
+        <div class="thumb"><button type="button" class="gal-item" data-full="images/img-0011.jpg" data-caption="UAYEB 2 — Purgatory" style="display:block;width:100%;height:100%;padding:0;border:0;background:none;"><img src="images/img-0012.jpg" alt="UAYEB 2 — Purgatory" loading="lazy"></button></div>
+        <div class="body"><h3>UAYEB 2 &mdash; Purgatory</h3><div class="meta">ICA Games &middot; CryEngine &middot; 2018&ndash;2019</div><div class="desc"><span class="i18n" data-fr="Épisode prototype de 5 à 6 heures réalisé en solo, pipeline complet du design au son.">5&ndash;6 hour solo-built prototype episode, full pipeline from design to sound.</span></div></div>
+      </div>
+      <div class="game-card">
+        <div class="thumb"><button type="button" class="gal-item" data-full="images/img-0013.jpg" data-caption="UAYEB — The Dry Land" style="display:block;width:100%;height:100%;padding:0;border:0;background:none;"><img src="images/img-0014.jpg" alt="UAYEB — The Dry Land" loading="lazy"></button></div>
+        <div class="body"><h3>UAYEB &mdash; The Dry Land</h3><div class="meta">ICA Games &middot; CryEngine &middot; 2018</div><div class="desc"><span class="i18n" data-fr="16km&amp;sup2; de monde ouvert, survie/puzzle/FPS, réalisé en solo &mdash; sorti sur Steam.">16km&sup2; open world, survival/puzzle/FPS, built solo &mdash; released on Steam.</span></div></div>
+      </div>
+      <div class="game-card">
+        <div class="thumb"><button type="button" class="gal-item" data-full="images/img-0015.jpg" data-caption="Flashback" style="display:block;width:100%;height:100%;padding:0;border:0;background:none;"><img src="images/img-0016.jpg" alt="Flashback" loading="lazy"></button></div>
+        <div class="body"><h3>Flashback (Ubisoft)</h3><div class="meta">VectorCell &middot; UE3 &middot; 2012&ndash;2013</div><div class="desc"><span class="i18n" data-fr="À la tête de l'équipe environnement et responsable de tout le level art du reboot console.">Led the environment team and set all the game level art for the console reboot.</span></div></div>
+      </div>
+      <div class="game-card"><div class="thumb cover"><button type="button" class="gal-item" data-full="images/img-0017.jpg" data-caption="Amy"><img src="images/img-0018.jpg" alt="Amy" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;"></button></div><div class="body"><h3>Amy</h3><div class="meta">VectorCell &middot; Phyre Engine &middot; 2010&ndash;2011</div><div class="desc"><span class="i18n" data-fr="Environnement et habillage de niveaux sur un jeu de survival horror.">Environment art and set dressing on survival horror game.</span></div></div></div>
+      <div class="game-card"><div class="thumb cover"><button type="button" class="gal-item" data-full="images/img-0019.jpg" data-caption="Arthur and the Minimoys"><img src="images/img-0020.jpg" alt="Arthur and the Minimoys" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;"></button></div><div class="body"><h3>Arthur and the Minimoys</h3><div class="meta">Ubisoft &middot; Jade Editor &middot; 2009</div><div class="desc"><span class="i18n" data-fr="À la tête de l'équipe environnement et responsable de tout le level art du jeu.">Led the environment team and set all the game level art.</span></div></div></div>
+      <div class="game-card"><div class="thumb cover"><button type="button" class="gal-item" data-full="images/img-0021.jpg" data-caption="Cine Studios Party"><img src="images/img-0022.jpg" alt="Cine Studios Party" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;"></button></div><div class="body"><h3>Cine Studios Party</h3><div class="meta">Ubisoft &middot; Jade Editor &middot; 2009</div><div class="desc"><span class="i18n" data-fr="À la tête de l'équipe environnement et responsable de tout le level art du jeu.">Led the environment team and set all the game level art.</span></div></div></div>
+      <div class="game-card"><div class="thumb cover"><button type="button" class="gal-item" data-full="images/img-0023.jpg" data-caption="Horzez 2"><img src="images/img-0024.jpg" alt="Horzez 2" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;"></button></div><div class="body"><h3>Horzez 2</h3><div class="meta">Ubisoft &middot; Jade Editor &middot; 2008</div><div class="desc"><span class="i18n" data-fr="Environnement et habillage de niveaux.">Environment art and set dressing.</span></div></div></div>
+      <div class="game-card"><div class="thumb cover"><button type="button" class="gal-item" data-full="images/img-0025.jpg" data-caption="Horzez"><img src="images/img-0026.jpg" alt="Horzez" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;"></button></div><div class="body"><h3>Horzez</h3><div class="meta">Ubisoft &middot; Jade Editor &middot; 2007</div><div class="desc"><span class="i18n" data-fr="Environnement et habillage de niveaux.">Environment art and set dressing.</span></div></div></div>
+    </div>
+    <p class="eyebrow" style="margin:40px 0 18px;color:var(--accent);"><span class="i18n" data-fr="Assurance Qualité">Quality Assurance</span></p>
+    <div class="proj-grid">
+      <div class="game-card"><div class="thumb cover"><button type="button" class="gal-item" data-full="images/img-0027.jpg" data-caption="BGE2"><img src="images/img-0028.jpg" alt="BGE2" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;"></button></div><div class="body"><h3>BGE2</h3><div class="meta">Ubisoft &middot; Voyager Editor &middot; 2019</div><div class="desc"><span class="i18n" data-fr="Test des outils de production en développement.">Testing development production tools.</span></div></div></div>
+      <div class="game-card"><div class="thumb cover"><button type="button" class="gal-item" data-full="images/img-0029.jpg" data-caption="Scarface"><img src="images/img-0030.jpg" alt="Scarface" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;"></button></div><div class="body"><h3>Scarface</h3><div class="meta">Vivendi Universal Games &middot; 2001&ndash;2006</div><div class="desc"><span class="i18n" data-fr="À la tête de l'équipe QA sur toutes les langues.">Led the QA team on all languages.</span></div></div></div>
+      <div class="game-card"><div class="thumb cover"><button type="button" class="gal-item" data-full="images/img-0031.jpg" data-caption="Swat 4 Expansion"><img src="images/img-0032.jpg" alt="Swat 4 Expansion" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;"></button></div><div class="body"><h3>Swat 4 Expansion</h3><div class="meta">Vivendi Universal Games &middot; 2001&ndash;2006</div><div class="desc"><span class="i18n" data-fr="À la tête de l'équipe QA sur toutes les langues.">Led the QA team on all languages.</span></div></div></div>
+      <div class="game-card"><div class="thumb cover"><button type="button" class="gal-item" data-full="images/img-0033.jpg" data-caption="Crash Bandicoot TTR"><img src="images/img-0034.jpg" alt="Crash Bandicoot TTR" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;"></button></div><div class="body"><h3>Crash Bandicoot TTR</h3><div class="meta">Vivendi Universal Games &middot; 2001&ndash;2006</div><div class="desc"><span class="i18n" data-fr="À la tête de l'équipe QA sur toutes les langues.">Led the QA team on all languages.</span></div></div></div>
+      <div class="game-card"><div class="thumb cover"><button type="button" class="gal-item" data-full="images/img-0035.jpg" data-caption="Swat 4"><img src="images/img-0036.jpg" alt="Swat 4" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;"></button></div><div class="body"><h3>Swat 4</h3><div class="meta">Vivendi Universal Games &middot; 2001&ndash;2006</div><div class="desc"><span class="i18n" data-fr="À la tête de l'équipe QA sur toutes les langues.">Led the QA team on all languages.</span></div></div></div>
+      <div class="game-card"><div class="thumb cover"><button type="button" class="gal-item" data-full="images/img-0037.jpg" data-caption="Leisure Suit Larry"><img src="images/img-0038.jpg" alt="Leisure Suit Larry" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;"></button></div><div class="body"><h3>Leisure Suit Larry</h3><div class="meta">Vivendi Universal Games &middot; 2001&ndash;2006</div><div class="desc"><span class="i18n" data-fr="À la tête de l'équipe QA sur toutes les langues.">Led the QA team on all languages.</span></div></div></div>
+      <div class="game-card"><div class="thumb cover"><button type="button" class="gal-item" data-full="images/img-0039.jpg" data-caption="Ground Control 2"><img src="images/img-0040.jpg" alt="Ground Control 2" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;"></button></div><div class="body"><h3>Ground Control 2</h3><div class="meta">Vivendi Universal Games &middot; 2001&ndash;2006</div><div class="desc"><span class="i18n" data-fr="À la tête de l'équipe QA sur toutes les langues.">Led the QA team on all languages.</span></div></div></div>
+      <div class="game-card"><div class="thumb cover"><button type="button" class="gal-item" data-full="images/img-0041.jpg" data-caption="The Xfiles"><img src="images/img-0042.jpg" alt="The Xfiles" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;"></button></div><div class="body"><h3>The Xfiles</h3><div class="meta">Vivendi Universal Games &middot; 2001&ndash;2006</div><div class="desc"><span class="i18n" data-fr="À la tête de l'équipe QA sur toutes les langues.">Led the QA team on all languages.</span></div></div></div>
+      <div class="game-card"><div class="thumb cover"><button type="button" class="gal-item" data-full="images/img-0043.jpg" data-caption="Homeworld 2"><img src="images/img-0044.jpg" alt="Homeworld 2" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;"></button></div><div class="body"><h3>Homeworld 2</h3><div class="meta">Vivendi Universal Games &middot; 2001&ndash;2006</div><div class="desc"><span class="i18n" data-fr="À la tête de l'équipe QA sur toutes les langues.">Led the QA team on all languages.</span></div></div></div>
+      <div class="game-card"><div class="thumb cover"><button type="button" class="gal-item" data-full="images/img-0045.jpg" data-caption="Battle Star Galactica"><img src="images/img-0046.jpg" alt="Battle Star Galactica" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;"></button></div><div class="body"><h3>Battle Star Galactica</h3><div class="meta">Vivendi Universal Games &middot; 2001&ndash;2006</div><div class="desc"><span class="i18n" data-fr="À la tête de l'équipe QA sur toutes les langues.">Led the QA team on all languages.</span></div></div></div>
+      <div class="game-card"><div class="thumb cover"><button type="button" class="gal-item" data-full="images/img-0047.jpg" data-caption="Hunter the Reckoning"><img src="images/img-0048.jpg" alt="Hunter the Reckoning" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;"></button></div><div class="body"><h3>Hunter the Reckoning</h3><div class="meta">Vivendi Universal Games &middot; 2001&ndash;2006</div><div class="desc"><span class="i18n" data-fr="À la tête de l'équipe QA sur toutes les langues.">Led the QA team on all languages.</span></div></div></div>
+      <div class="game-card"><div class="thumb cover"><button type="button" class="gal-item" data-full="images/img-0049.jpg" data-caption="Mace Griffin Bounty Hunter"><img src="images/img-0050.jpg" alt="Mace Griffin Bounty Hunter" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;"></button></div><div class="body"><h3>Mace Griffin Bounty Hunter</h3><div class="meta">Vivendi Universal Games &middot; 2001&ndash;2006</div><div class="desc"><span class="i18n" data-fr="À la tête de l'équipe QA sur toutes les langues.">Led the QA team on all languages.</span></div></div></div>
+      <div class="game-card"><div class="thumb cover"><button type="button" class="gal-item" data-full="images/img-0051.jpg" data-caption="BloodRayne"><img src="images/img-0052.jpg" alt="BloodRayne" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;"></button></div><div class="body"><h3>BloodRayne</h3><div class="meta">Vivendi Universal Games &middot; 2001&ndash;2006</div><div class="desc"><span class="i18n" data-fr="À la tête de l'équipe QA sur toutes les langues.">Led the QA team on all languages.</span></div></div></div>
+      <div class="game-card"><div class="thumb cover"><button type="button" class="gal-item" data-full="images/img-0053.jpg" data-caption="Casino Empire"><img src="images/img-0054.jpg" alt="Casino Empire" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;"></button></div><div class="body"><h3>Casino Empire</h3><div class="meta">Vivendi Universal Games &middot; 2001&ndash;2006</div><div class="desc"><span class="i18n" data-fr="À la tête de l'équipe QA sur toutes les langues.">Led the QA team on all languages.</span></div></div></div>
+      <div class="game-card"><div class="thumb cover"><button type="button" class="gal-item" data-full="images/img-0055.jpg" data-caption="The Scorpion King"><img src="images/img-0056.jpg" alt="The Scorpion King" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;"></button></div><div class="body"><h3>The Scorpion King</h3><div class="meta">Vivendi Universal Games &middot; 2001&ndash;2006</div><div class="desc"><span class="i18n" data-fr="À la tête de l'équipe QA sur toutes les langues.">Led the QA team on all languages.</span></div></div></div>
+      <div class="game-card"><div class="thumb cover"><button type="button" class="gal-item" data-full="images/img-0057.jpg" data-caption="Warcraft III"><img src="images/img-0058.jpg" alt="Warcraft III" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;"></button></div><div class="body"><h3>Warcraft III</h3><div class="meta">Vivendi Universal Games &middot; 2001&ndash;2006</div><div class="desc"><span class="i18n" data-fr="À la tête de l'équipe QA sur toutes les langues.">Led the QA team on all languages.</span></div></div></div>
+      <div class="game-card"><div class="thumb cover"><button type="button" class="gal-item" data-full="images/img-0059.jpg" data-caption="Alien vs Predator II"><img src="images/img-0060.jpg" alt="Alien vs Predator II" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;"></button></div><div class="body"><h3>Alien vs Predator II</h3><div class="meta">Vivendi Universal Games &middot; 2001&ndash;2006</div><div class="desc"><span class="i18n" data-fr="À la tête de l'équipe QA sur toutes les langues.">Led the QA team on all languages.</span></div></div></div>
+      <div class="game-card"><div class="thumb cover"><button type="button" class="gal-item" data-full="images/img-0061.jpg" data-caption="Throne of Darkness"><img src="images/img-0062.jpg" alt="Throne of Darkness" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;"></button></div><div class="body"><h3>Throne of Darkness</h3><div class="meta">Vivendi Universal Games &middot; 2001&ndash;2006</div><div class="desc"><span class="i18n" data-fr="À la tête de l'équipe QA sur toutes les langues.">Led the QA team on all languages.</span></div></div></div>
+      <div class="game-card"><div class="thumb cover"><button type="button" class="gal-item" data-full="images/img-0063.jpg" data-caption="Diablo II Exp"><img src="images/img-0064.jpg" alt="Diablo II Exp" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;"></button></div><div class="body"><h3>Diablo II Exp</h3><div class="meta">Vivendi Universal Games &middot; 2001&ndash;2006</div><div class="desc"><span class="i18n" data-fr="À la tête de l'équipe QA sur toutes les langues.">Led the QA team on all languages.</span></div></div></div>
+      <div class="game-card"><div class="thumb cover"><button type="button" class="gal-item" data-full="images/img-0065.jpg" data-caption="Half-Life"><img src="images/img-0066.jpg" alt="Half-Life" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;"></button></div><div class="body"><h3>Half-Life</h3><div class="meta">Vivendi Universal Games &middot; 2000</div><div class="desc"><span class="i18n" data-fr="Test QA.">QA testing.</span></div></div></div>
+      <div class="game-card"><div class="thumb cover"><button type="button" class="gal-item" data-full="images/img-0067.jpg" data-caption="Gunman Chronicles (Half Life)"><img src="images/img-0068.jpg" alt="Gunman Chronicles (Half Life)" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;"></button></div><div class="body"><h3>Gunman Chronicles (Half Life)</h3><div class="meta">Vivendi Universal Games &middot; 2000</div><div class="desc"><span class="i18n" data-fr="Test QA.">QA testing.</span></div></div></div>
+      <div class="game-card"><div class="thumb cover"><button type="button" class="gal-item" data-full="images/img-0069.jpg" data-caption="Half Life (Blue Shift)"><img src="images/img-0070.jpg" alt="Half Life (Blue Shift)" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;"></button></div><div class="body"><h3>Half Life (Blue Shift)</h3><div class="meta">Vivendi Universal Games &middot; 2000</div><div class="desc"><span class="i18n" data-fr="Test QA.">QA testing.</span></div></div></div>
+      <div class="game-card"><div class="thumb cover"><button type="button" class="gal-item" data-full="images/img-0071.jpg" data-caption="Zeus"><img src="images/img-0072.jpg" alt="Zeus" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block;"></button></div><div class="body"><h3>Zeus</h3><div class="meta">Vivendi Universal Games &middot; 2000</div><div class="desc"><span class="i18n" data-fr="Test QA.">QA testing.</span></div></div></div><div class="game-card"><div class="thumb"><button type="button" class="gal-item" data-full="images/img-0257.jpg" data-caption="C4"><img src="images/img-0258.jpg" alt="C4" loading="lazy"></button></div><div class="body"><h3>C4</h3><div class="meta">Excess Development &middot; 1996&ndash;1998</div><div class="desc"><span class="i18n" data-fr="Sound design, musique et art 3D.">Sound design, music and 3D Art.</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="lighting-bg"><img src="images/img-0073.jpg" alt=""></div>
+<div class="lighting2-bg"><img src="images/img-0074.jpg" alt=""></div>
+<div class="lighting3-bg"><img src="images/img-0285.jpg" alt=""></div>
+<section id="lighting">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Lighting</h2>
+      <span class="idx mono">04</span>
+    </div>
+    <div id="lighting1" class="gallery-block">
+      <div class="gb-hero-row">
+      <div class="gb-head gb-panel">
+        <h3><span class="i18n" data-fr="Étude d'appartement chaleureux">Warm apartment study</span></h3>
+        <p class="gb-note"><span class="i18n" data-fr="Scène Megascan &quot;Abandoned Apartment&quot; entièrement dépouillée de son éclairage et reconstruite de zéro &mdash; lumière directionnelle, brouillard exponentiel, fond HDRI, atmosphère de ciel, sky light et nuages volumétriques, réglés pour une passe de jour chaleureuse et une passe de nuit à l'ampoule vacillante.">Megascan "Abandoned Apartment" scene with all lighting stripped and rebuilt from scratch &mdash; directional light, exponential height fog, HDRI backdrop, sky atmosphere, sky light and volumetric cloud, tuned for a warm day pass and a flickering-bulb night pass.</span></p>
+      </div>
+        <div class="gb-hero-img">
+          <button type="button" class="gal-item" data-full="images/img-0075.jpg" data-caption="Base scene (Megascan Abandoned Apartment)"><img src="images/img-0076.jpg" alt="Base scene (Megascan Abandoned Apartment)" loading="lazy"></button>
+        </div>
+      </div>
+      <div class="gal-grid">
+<button type="button" class="gal-item" data-full="images/img-0077.jpg" data-caption="Reworked — day light, pass 1"><img src="images/img-0078.jpg" alt="Reworked — day light, pass 1" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0079.jpg" data-caption="Reworked — day light, pass 2"><img src="images/img-0080.jpg" alt="Reworked — day light, pass 2" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0081.jpg" data-caption="Reworked — day light, pass 3"><img src="images/img-0082.jpg" alt="Reworked — day light, pass 3" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0083.jpg" data-caption="Reworked — day light, pass 4"><img src="images/img-0084.jpg" alt="Reworked — day light, pass 4" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0085.jpg" data-caption="Reworked — night light, pass 1"><img src="images/img-0086.jpg" alt="Reworked — night light, pass 1" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0087.jpg" data-caption="Reworked — night light, pass 2"><img src="images/img-0088.jpg" alt="Reworked — night light, pass 2" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0089.jpg" data-caption="Reworked — night light, pass 3"><img src="images/img-0090.jpg" alt="Reworked — night light, pass 3" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0091.jpg" data-caption="Reworked — night light, pass 4"><img src="images/img-0092.jpg" alt="Reworked — night light, pass 4" loading="lazy"></button>
+      </div>
+    </div>
+    <div id="lighting2" class="gallery-block">
+      <div class="gb-hero-row">
+      <div class="gb-panel">
+        <h3><span class="i18n" data-fr="HELIX Pacifica &mdash; Éclairage nocturne">HELIX Pacifica Night Lighting</span></h3>
+        <p class="gb-note"><span class="i18n" data-fr="Éclairage nocturne sur la ville de Miami d'HELIX Pacifica &mdash; néons, lampadaires et lumière lunaire sur une façade Art déco. A également réalisé l'habillage et l'intérieur du bar/hôtel Salsero.">Night lighting on the HELIX Pacifica Miami city &mdash; neon signage, streetlights and moonlight across an Art Deco facade. Also made the set dressing and Salsero bar/hotel interior.</span></p>
+      </div>
+        <div class="gb-hero-img">
+          <button type="button" class="gal-item" data-full="images/img-0283.jpg" data-caption="HELIX Pacifica — Salsero building, night"><img src="images/img-0284.jpg" alt="HELIX Pacifica — Salsero building, night" loading="lazy"></button>
+        </div>
+      </div>
+      <div class="gal-grid">
+<button type="button" class="gal-item" data-full="images/img-0259.jpg" data-caption="HELIX Pacifica — Marlin Hotel & Salsero, night"><img src="images/img-0260.jpg" alt="HELIX Pacifica — Marlin Hotel & Salsero, night" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0261.jpg" data-caption="HELIX Pacifica — night street 2"><img src="images/img-0262.jpg" alt="HELIX Pacifica — night street 2" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0263.jpg" data-caption="HELIX Pacifica — night street 3"><img src="images/img-0264.jpg" alt="HELIX Pacifica — night street 3" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0265.jpg" data-caption="HELIX Pacifica — night street 4"><img src="images/img-0266.jpg" alt="HELIX Pacifica — night street 4" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0267.jpg" data-caption="HELIX Pacifica — night street 5"><img src="images/img-0268.jpg" alt="HELIX Pacifica — night street 5" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0269.jpg" data-caption="HELIX Pacifica — night street 6"><img src="images/img-0270.jpg" alt="HELIX Pacifica — night street 6" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0271.jpg" data-caption="HELIX Pacifica — night street 7"><img src="images/img-0272.jpg" alt="HELIX Pacifica — night street 7" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0273.jpg" data-caption="HELIX Pacifica — night street 8"><img src="images/img-0274.jpg" alt="HELIX Pacifica — night street 8" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0275.jpg" data-caption="HELIX Pacifica — night street 9"><img src="images/img-0276.jpg" alt="HELIX Pacifica — night street 9" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0277.jpg" data-caption="HELIX Pacifica — night street 10"><img src="images/img-0278.jpg" alt="HELIX Pacifica — night street 10" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0279.jpg" data-caption="HELIX Pacifica — night street 11"><img src="images/img-0280.jpg" alt="HELIX Pacifica — night street 11" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0281.jpg" data-caption="HELIX Pacifica — night street 12"><img src="images/img-0282.jpg" alt="HELIX Pacifica — night street 12" loading="lazy"></button>
+      </div>
+    </div>
+    <div id="lighting3" class="gallery-block">
+      <div class="gb-hero-row">
+      <div class="gb-panel">
+        <h3><span class="i18n" data-fr="HELIX - Pacifica - Bar Nikita Beach">HELIX - Pacifica - Nikita Beach bar</span></h3>
+        <p class="gb-note"><span class="i18n" data-fr="Éclairage nocturne du bar de plage de Pacifica. A également réalisé tout l'environnement et l'habillage du bar.">Night lighting on the Pacifica beach bar. Also made all the bar environment and set dressing.</span></p>
+      </div>
+        <div class="gb-hero-img">
+          <button type="button" class="gal-item" data-full="images/img-0286.jpg" data-caption="HELIX Pacifica — Nikita Beach bar, night"><img src="images/img-0287.jpg" alt="HELIX Pacifica — Nikita Beach bar, night" loading="lazy"></button>
+        </div>
+      </div>
+      <div class="gal-grid">
+<button type="button" class="gal-item" data-full="images/img-0288.jpg" data-caption="HELIX Pacifica — Nikita Beach bar, night 2"><img src="images/img-0289.jpg" alt="HELIX Pacifica — Nikita Beach bar, night 2" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0290.jpg" data-caption="HELIX Pacifica — Nikita Beach bar, night 3"><img src="images/img-0291.jpg" alt="HELIX Pacifica — Nikita Beach bar, night 3" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0292.jpg" data-caption="HELIX Pacifica — Nikita Beach bar, night 4"><img src="images/img-0293.jpg" alt="HELIX Pacifica — Nikita Beach bar, night 4" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0294.jpg" data-caption="HELIX Pacifica — Nikita Beach bar, night 5"><img src="images/img-0295.jpg" alt="HELIX Pacifica — Nikita Beach bar, night 5" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0296.jpg" data-caption="HELIX Pacifica — Nikita Beach bar, night 6"><img src="images/img-0297.jpg" alt="HELIX Pacifica — Nikita Beach bar, night 6" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0298.jpg" data-caption="HELIX Pacifica — Nikita Beach bar, night 7"><img src="images/img-0299.jpg" alt="HELIX Pacifica — Nikita Beach bar, night 7" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0300.jpg" data-caption="HELIX Pacifica — Nikita Beach bar, night 8"><img src="images/img-0301.jpg" alt="HELIX Pacifica — Nikita Beach bar, night 8" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0302.jpg" data-caption="HELIX Pacifica — Nikita Beach bar, night 9"><img src="images/img-0303.jpg" alt="HELIX Pacifica — Nikita Beach bar, night 9" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0304.jpg" data-caption="HELIX Pacifica — Nikita Beach bar, night 10"><img src="images/img-0305.jpg" alt="HELIX Pacifica — Nikita Beach bar, night 10" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0306.jpg" data-caption="HELIX Pacifica — Nikita Beach bar, night 11"><img src="images/img-0307.jpg" alt="HELIX Pacifica — Nikita Beach bar, night 11" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0308.jpg" data-caption="HELIX Pacifica — Nikita Beach bar, night 12"><img src="images/img-0309.jpg" alt="HELIX Pacifica — Nikita Beach bar, night 12" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0310.jpg" data-caption="HELIX Pacifica — Nikita Beach bar, night 13"><img src="images/img-0311.jpg" alt="HELIX Pacifica — Nikita Beach bar, night 13" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0312.jpg" data-caption="HELIX Pacifica — Nikita Beach bar, night 14"><img src="images/img-0313.jpg" alt="HELIX Pacifica — Nikita Beach bar, night 14" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0314.jpg" data-caption="HELIX Pacifica — Nikita Beach bar, night 15"><img src="images/img-0315.jpg" alt="HELIX Pacifica — Nikita Beach bar, night 15" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0316.jpg" data-caption="HELIX Pacifica — Nikita Beach bar, night 16"><img src="images/img-0317.jpg" alt="HELIX Pacifica — Nikita Beach bar, night 16" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0318.jpg" data-caption="HELIX Pacifica — Nikita Beach bar, night 17"><img src="images/img-0319.jpg" alt="HELIX Pacifica — Nikita Beach bar, night 17" loading="lazy"></button>
+      </div>
+    </div>
+
+    <div id="lighting4" class="gallery-block">
+      <div class="gb-hero-row">
+      <div class="gb-panel">
+        <h3><span class="i18n" data-fr="HELIX - Pacifica de nuit">HELIX - Pacifica by night</span></h3>
+        <p class="gb-note"><span class="i18n" data-fr="Création de quelques bâtiments et villas, bar de plage, centre de congrès, bar et hôtels, toutes les routes, level art, habillage de végétation, composition d'environnement et habillage de niveaux.">Made some buildings and villas, beach bar, convention center, bar and hotels, all roads, level art, vegetation dressing, environment composition and set dressing.</span></p>
+      </div>
+        <div class="gb-hero-img">
+          <button type="button" class="gal-item" data-full="images/img-0542.jpg" data-caption="HELIX Pacifica — Streets by night light"><img src="images/img-0543.jpg" alt="HELIX Pacifica — Streets by night light" loading="lazy"></button>
+        </div>
+      </div>
+      <div class="gal-grid">
+<button type="button" class="gal-item" data-full="images/img-0545.jpg" data-caption="HELIX Pacifica — Streets by night light 2"><img src="images/img-0546.jpg" alt="HELIX Pacifica — Streets by night light 2" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0547.jpg" data-caption="HELIX Pacifica — Streets by night light 3"><img src="images/img-0548.jpg" alt="HELIX Pacifica — Streets by night light 3" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0549.jpg" data-caption="HELIX Pacifica — Streets by night light 4"><img src="images/img-0550.jpg" alt="HELIX Pacifica — Streets by night light 4" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0551.jpg" data-caption="HELIX Pacifica — Streets by night light 5"><img src="images/img-0552.jpg" alt="HELIX Pacifica — Streets by night light 5" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0553.jpg" data-caption="HELIX Pacifica — Streets by night light 6"><img src="images/img-0554.jpg" alt="HELIX Pacifica — Streets by night light 6" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0555.jpg" data-caption="HELIX Pacifica — Streets by night light 7"><img src="images/img-0556.jpg" alt="HELIX Pacifica — Streets by night light 7" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0557.jpg" data-caption="HELIX Pacifica — Streets by night light 8"><img src="images/img-0558.jpg" alt="HELIX Pacifica — Streets by night light 8" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0559.jpg" data-caption="HELIX Pacifica — Streets by night light 9"><img src="images/img-0560.jpg" alt="HELIX Pacifica — Streets by night light 9" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0561.jpg" data-caption="HELIX Pacifica — Streets by night light 10"><img src="images/img-0562.jpg" alt="HELIX Pacifica — Streets by night light 10" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0563.jpg" data-caption="HELIX Pacifica — Streets by night light 11"><img src="images/img-0564.jpg" alt="HELIX Pacifica — Streets by night light 11" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0565.jpg" data-caption="HELIX Pacifica — Streets by night light 12"><img src="images/img-0566.jpg" alt="HELIX Pacifica — Streets by night light 12" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0567.jpg" data-caption="HELIX Pacifica — Streets by night light 13"><img src="images/img-0568.jpg" alt="HELIX Pacifica — Streets by night light 13" loading="lazy"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="levelart-bg"><img src="images/img-0323.jpg" alt=""></div>
+<div class="lighting4-bg"><img src="images/img-0544.jpg" alt=""></div>
+<section id="levelart">
+  <div class="wrap">
+    <div class="section-head">
+      <h2><span class="i18n" data-fr="Level Art">Level Art</span></h2>
+      <span class="idx mono">05</span>
+    </div>
+    
+    <div id="levelart-panel" class="gallery-block">
+      <div class="gb-hero-row">
+      <div class="gb-panel">
+        <h3><span class="i18n" data-fr="UAYEB - The Mayan Adventure">UAYEB - The Mayan Adventure</span></h3>
+        <p class="gb-note"><span class="i18n" data-fr="Modélisation de maisons et piscines, level art, composition d'environnement et habillage de niveaux.">House and pool modeling, level art, environment composition and set dressing.</span></p>
+      </div>
+        <div class="gb-hero-img">
+          <button type="button" class="gal-item" data-full="images/img-0321.jpg" data-caption="UAYEB: The Mayan Adventure — level shot 1"><img src="images/img-0322.jpg" alt="UAYEB: The Mayan Adventure — level shot 1" loading="lazy"></button>
+        </div>
+      </div>
+      <div class="gal-grid">
+<button type="button" class="gal-item" data-full="images/img-0324.jpg" data-caption="UAYEB: The Mayan Adventure — level shot 2"><img src="images/img-0325.jpg" alt="UAYEB: The Mayan Adventure — level shot 2" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0326.jpg" data-caption="UAYEB: The Mayan Adventure — level shot 3"><img src="images/img-0327.jpg" alt="UAYEB: The Mayan Adventure — level shot 3" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0328.jpg" data-caption="UAYEB: The Mayan Adventure — level shot 4"><img src="images/img-0329.jpg" alt="UAYEB: The Mayan Adventure — level shot 4" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0330.jpg" data-caption="UAYEB: The Mayan Adventure — level shot 5"><img src="images/img-0331.jpg" alt="UAYEB: The Mayan Adventure — level shot 5" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0332.jpg" data-caption="UAYEB: The Mayan Adventure — level shot 6"><img src="images/img-0333.jpg" alt="UAYEB: The Mayan Adventure — level shot 6" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0334.jpg" data-caption="UAYEB: The Mayan Adventure — level shot 7"><img src="images/img-0335.jpg" alt="UAYEB: The Mayan Adventure — level shot 7" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0336.jpg" data-caption="UAYEB: The Mayan Adventure — level shot 8"><img src="images/img-0337.jpg" alt="UAYEB: The Mayan Adventure — level shot 8" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0338.jpg" data-caption="UAYEB: The Mayan Adventure — level shot 9"><img src="images/img-0339.jpg" alt="UAYEB: The Mayan Adventure — level shot 9" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0340.jpg" data-caption="UAYEB: The Mayan Adventure — level shot 10"><img src="images/img-0341.jpg" alt="UAYEB: The Mayan Adventure — level shot 10" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0342.jpg" data-caption="UAYEB: The Mayan Adventure — level shot 11"><img src="images/img-0343.jpg" alt="UAYEB: The Mayan Adventure — level shot 11" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0344.jpg" data-caption="UAYEB: The Mayan Adventure — level shot 12"><img src="images/img-0345.jpg" alt="UAYEB: The Mayan Adventure — level shot 12" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0346.jpg" data-caption="UAYEB: The Mayan Adventure — level shot 13"><img src="images/img-0347.jpg" alt="UAYEB: The Mayan Adventure — level shot 13" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0348.jpg" data-caption="UAYEB: The Mayan Adventure — level shot 14"><img src="images/img-0349.jpg" alt="UAYEB: The Mayan Adventure — level shot 14" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0350.jpg" data-caption="UAYEB: The Mayan Adventure — level shot 15"><img src="images/img-0351.jpg" alt="UAYEB: The Mayan Adventure — level shot 15" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0352.jpg" data-caption="UAYEB: The Mayan Adventure — level shot 16"><img src="images/img-0353.jpg" alt="UAYEB: The Mayan Adventure — level shot 16" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0354.jpg" data-caption="UAYEB: The Mayan Adventure — level shot 17"><img src="images/img-0355.jpg" alt="UAYEB: The Mayan Adventure — level shot 17" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0356.jpg" data-caption="UAYEB: The Mayan Adventure — level shot 18"><img src="images/img-0357.jpg" alt="UAYEB: The Mayan Adventure — level shot 18" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0358.jpg" data-caption="UAYEB: The Mayan Adventure — level shot 19"><img src="images/img-0359.jpg" alt="UAYEB: The Mayan Adventure — level shot 19" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0360.jpg" data-caption="UAYEB: The Mayan Adventure — level shot 20"><img src="images/img-0361.jpg" alt="UAYEB: The Mayan Adventure — level shot 20" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0362.jpg" data-caption="UAYEB: The Mayan Adventure — level shot 21"><img src="images/img-0363.jpg" alt="UAYEB: The Mayan Adventure — level shot 21" loading="lazy"></button>
+      </div>
+    </div>
+
+    <div id="levelart-panel2" class="gallery-block">
+      <div class="gb-hero-row">
+      <div class="gb-panel">
+        <h3><span class="i18n" data-fr="Helix - Pacifica - Star Island">Helix - Pacifica - Star Island</span></h3>
+        <p class="gb-note" style="margin-bottom:4px;"><span class="i18n" data-fr="Villas résidentielles">Residential villas</span></p>
+        <p class="gb-note"><span class="i18n" data-fr="Création de villas avec des pièces modulaires, level art, composition d'environnement et habillage de niveaux.">Made villas with modular pieces, level art, environment composition and set dressing.</span></p>
+      </div>
+        <div class="gb-hero-img">
+          <button type="button" class="gal-item" data-full="images/img-0364.jpg" data-caption="Helix Game Platform — Pacifica, Star Island residential villas"><img src="images/img-0365.jpg" alt="Helix Game Platform — Pacifica, Star Island residential villas" loading="lazy"></button>
+        </div>
+      </div>
+      <div class="gal-grid">
+<button type="button" class="gal-item" data-full="images/img-0367.jpg" data-caption="Helix Game Platform — Pacifica, Star Island residential villas 2"><img src="images/img-0368.jpg" alt="Helix Game Platform — Pacifica, Star Island residential villas 2" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0369.jpg" data-caption="Helix Game Platform — Pacifica, Star Island residential villas 3"><img src="images/img-0370.jpg" alt="Helix Game Platform — Pacifica, Star Island residential villas 3" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0371.jpg" data-caption="Helix Game Platform — Pacifica, Star Island residential villas 4"><img src="images/img-0372.jpg" alt="Helix Game Platform — Pacifica, Star Island residential villas 4" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0373.jpg" data-caption="Helix Game Platform — Pacifica, Star Island residential villas 5"><img src="images/img-0374.jpg" alt="Helix Game Platform — Pacifica, Star Island residential villas 5" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0375.jpg" data-caption="Helix Game Platform — Pacifica, Star Island residential villas 6"><img src="images/img-0376.jpg" alt="Helix Game Platform — Pacifica, Star Island residential villas 6" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0377.jpg" data-caption="Helix Game Platform — Pacifica, Star Island residential villas 7"><img src="images/img-0378.jpg" alt="Helix Game Platform — Pacifica, Star Island residential villas 7" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0379.jpg" data-caption="Helix Game Platform — Pacifica, Star Island residential villas 8"><img src="images/img-0380.jpg" alt="Helix Game Platform — Pacifica, Star Island residential villas 8" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0381.jpg" data-caption="Helix Game Platform — Pacifica, Star Island residential villas 9"><img src="images/img-0382.jpg" alt="Helix Game Platform — Pacifica, Star Island residential villas 9" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0383.jpg" data-caption="Helix Game Platform — Pacifica, Star Island residential villas 10"><img src="images/img-0384.jpg" alt="Helix Game Platform — Pacifica, Star Island residential villas 10" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0385.jpg" data-caption="Helix Game Platform — Pacifica, Star Island residential villas 11"><img src="images/img-0386.jpg" alt="Helix Game Platform — Pacifica, Star Island residential villas 11" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0387.jpg" data-caption="Helix Game Platform — Pacifica, Star Island residential villas 12"><img src="images/img-0388.jpg" alt="Helix Game Platform — Pacifica, Star Island residential villas 12" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0389.jpg" data-caption="Helix Game Platform — Pacifica, Star Island residential villas 13"><img src="images/img-0390.jpg" alt="Helix Game Platform — Pacifica, Star Island residential villas 13" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0391.jpg" data-caption="Helix Game Platform — Pacifica, Star Island residential villas 14"><img src="images/img-0392.jpg" alt="Helix Game Platform — Pacifica, Star Island residential villas 14" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0393.jpg" data-caption="Helix Game Platform — Pacifica, Star Island residential villas 15"><img src="images/img-0394.jpg" alt="Helix Game Platform — Pacifica, Star Island residential villas 15" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0395.jpg" data-caption="Helix Game Platform — Pacifica, Star Island residential villas 16"><img src="images/img-0396.jpg" alt="Helix Game Platform — Pacifica, Star Island residential villas 16" loading="lazy"></button><button type="button" class="gal-item" data-full="images/img-0399.jpg" data-caption="Helix Game Platform — Pacifica, Star Island residential villas 18"><img src="images/img-0400.jpg" alt="Helix Game Platform — Pacifica, Star Island residential villas 18" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0401.jpg" data-caption="Helix Game Platform — Pacifica, Star Island residential villas 19"><img src="images/img-0402.jpg" alt="Helix Game Platform — Pacifica, Star Island residential villas 19" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0403.jpg" data-caption="Helix Game Platform — Pacifica, Star Island residential villas 20"><img src="images/img-0404.jpg" alt="Helix Game Platform — Pacifica, Star Island residential villas 20" loading="lazy"></button><button type="button" class="gal-item" data-full="images/img-0407.jpg" data-caption="Helix Game Platform — Pacifica, Star Island residential villas 22"><img src="images/img-0408.jpg" alt="Helix Game Platform — Pacifica, Star Island residential villas 22" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0409.jpg" data-caption="Helix Game Platform — Pacifica, Star Island residential villas 23"><img src="images/img-0410.jpg" alt="Helix Game Platform — Pacifica, Star Island residential villas 23" loading="lazy"></button>
+      </div>
+    </div>
+
+    <div id="levelart-panel3" class="gallery-block">
+      <div class="gb-hero-row">
+      <div class="gb-panel">
+        <h3><span class="i18n" data-fr="Helix - Pacifica - Dodge Island">Helix - Pacifica - Dodge Island</span></h3>
+        <p class="gb-note" style="margin-bottom:4px;"><span class="i18n" data-fr="District industriel">Industrial district</span></p>
+        <p class="gb-note"><span class="i18n" data-fr="Création de bâtiments, level art, composition d'environnement et habillage de niveaux.">Made buildings, level art, environment composition and set dressing.</span></p>
+      </div>
+        <div class="gb-hero-img">
+          <button type="button" class="gal-item" data-full="images/img-0411.jpg" data-caption="Helix Game Platform — Pacifica, Dodge Island industrial district"><img src="images/img-0412.jpg" alt="Helix Game Platform — Pacifica, Dodge Island industrial district" loading="lazy"></button>
+        </div>
+      </div>
+      <div class="gal-grid">
+<button type="button" class="gal-item" data-full="images/img-0414.jpg" data-caption="Helix Game Platform — Pacifica, Dodge Island industrial district 2"><img src="images/img-0415.jpg" alt="Helix Game Platform — Pacifica, Dodge Island industrial district 2" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0416.jpg" data-caption="Helix Game Platform — Pacifica, Dodge Island industrial district 3"><img src="images/img-0417.jpg" alt="Helix Game Platform — Pacifica, Dodge Island industrial district 3" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0418.jpg" data-caption="Helix Game Platform — Pacifica, Dodge Island industrial district 4"><img src="images/img-0419.jpg" alt="Helix Game Platform — Pacifica, Dodge Island industrial district 4" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0420.jpg" data-caption="Helix Game Platform — Pacifica, Dodge Island industrial district 5"><img src="images/img-0421.jpg" alt="Helix Game Platform — Pacifica, Dodge Island industrial district 5" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0422.jpg" data-caption="Helix Game Platform — Pacifica, Dodge Island industrial district 6"><img src="images/img-0423.jpg" alt="Helix Game Platform — Pacifica, Dodge Island industrial district 6" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0424.jpg" data-caption="Helix Game Platform — Pacifica, Dodge Island industrial district 7"><img src="images/img-0425.jpg" alt="Helix Game Platform — Pacifica, Dodge Island industrial district 7" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0426.jpg" data-caption="Helix Game Platform — Pacifica, Dodge Island industrial district 8"><img src="images/img-0427.jpg" alt="Helix Game Platform — Pacifica, Dodge Island industrial district 8" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0428.jpg" data-caption="Helix Game Platform — Pacifica, Dodge Island industrial district 9"><img src="images/img-0429.jpg" alt="Helix Game Platform — Pacifica, Dodge Island industrial district 9" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0430.jpg" data-caption="Helix Game Platform — Pacifica, Dodge Island industrial district 10"><img src="images/img-0431.jpg" alt="Helix Game Platform — Pacifica, Dodge Island industrial district 10" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0432.jpg" data-caption="Helix Game Platform — Pacifica, Dodge Island industrial district 11"><img src="images/img-0433.jpg" alt="Helix Game Platform — Pacifica, Dodge Island industrial district 11" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0434.jpg" data-caption="Helix Game Platform — Pacifica, Dodge Island industrial district 12"><img src="images/img-0435.jpg" alt="Helix Game Platform — Pacifica, Dodge Island industrial district 12" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0436.jpg" data-caption="Helix Game Platform — Pacifica, Dodge Island industrial district 13"><img src="images/img-0437.jpg" alt="Helix Game Platform — Pacifica, Dodge Island industrial district 13" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0438.jpg" data-caption="Helix Game Platform — Pacifica, Dodge Island industrial district 14"><img src="images/img-0439.jpg" alt="Helix Game Platform — Pacifica, Dodge Island industrial district 14" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0440.jpg" data-caption="Helix Game Platform — Pacifica, Dodge Island industrial district 15"><img src="images/img-0441.jpg" alt="Helix Game Platform — Pacifica, Dodge Island industrial district 15" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0442.jpg" data-caption="Helix Game Platform — Pacifica, Dodge Island industrial district 16"><img src="images/img-0443.jpg" alt="Helix Game Platform — Pacifica, Dodge Island industrial district 16" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0444.jpg" data-caption="Helix Game Platform — Pacifica, Dodge Island industrial district 17"><img src="images/img-0445.jpg" alt="Helix Game Platform — Pacifica, Dodge Island industrial district 17" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0446.jpg" data-caption="Helix Game Platform — Pacifica, Dodge Island industrial district 18"><img src="images/img-0447.jpg" alt="Helix Game Platform — Pacifica, Dodge Island industrial district 18" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0448.jpg" data-caption="Helix Game Platform — Pacifica, Dodge Island industrial district 19"><img src="images/img-0449.jpg" alt="Helix Game Platform — Pacifica, Dodge Island industrial district 19" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0454.jpg" data-caption="Helix Game Platform — Pacifica, Dodge Island industrial district 20"><img src="images/img-0455.jpg" alt="Helix Game Platform — Pacifica, Dodge Island industrial district 20" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0452.jpg" data-caption="Helix Game Platform — Pacifica, Dodge Island industrial district 21"><img src="images/img-0453.jpg" alt="Helix Game Platform — Pacifica, Dodge Island industrial district 21" loading="lazy"></button>
+      </div>
+    </div>
+
+    <div id="levelart-panel4" class="gallery-block">
+      <div class="gb-hero-row">
+      <div class="gb-panel">
+        <h3><span class="i18n" data-fr="Helix - Pacifica - Convention Center">Helix - Pacifica - Convention Center</span></h3>
+        <p class="gb-note"><span class="i18n" data-fr="Création du bâtiment et des parcs, level art, composition d'environnement et habillage de niveaux.">Made the building and parks, level art, environment composition and set dressing.</span></p>
+      </div>
+        <div class="gb-hero-img">
+          <button type="button" class="gal-item" data-full="images/img-0456.jpg" data-caption="Helix Game Platform — Pacifica, South Beach Convention Center"><img src="images/img-0457.jpg" alt="Helix Game Platform — Pacifica, South Beach Convention Center" loading="lazy"></button>
+        </div>
+      </div>
+      <div class="gal-grid">
+<button type="button" class="gal-item" data-full="images/img-0459.jpg" data-caption="Helix Game Platform — Pacifica, South Beach Convention Center 2"><img src="images/img-0460.jpg" alt="Helix Game Platform — Pacifica, South Beach Convention Center 2" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0461.jpg" data-caption="Helix Game Platform — Pacifica, South Beach Convention Center 3"><img src="images/img-0462.jpg" alt="Helix Game Platform — Pacifica, South Beach Convention Center 3" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0463.jpg" data-caption="Helix Game Platform — Pacifica, South Beach Convention Center 4"><img src="images/img-0464.jpg" alt="Helix Game Platform — Pacifica, South Beach Convention Center 4" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0465.jpg" data-caption="Helix Game Platform — Pacifica, South Beach Convention Center 5"><img src="images/img-0466.jpg" alt="Helix Game Platform — Pacifica, South Beach Convention Center 5" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0467.jpg" data-caption="Helix Game Platform — Pacifica, South Beach Convention Center 6"><img src="images/img-0468.jpg" alt="Helix Game Platform — Pacifica, South Beach Convention Center 6" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0469.jpg" data-caption="Helix Game Platform — Pacifica, South Beach Convention Center 7"><img src="images/img-0470.jpg" alt="Helix Game Platform — Pacifica, South Beach Convention Center 7" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0471.jpg" data-caption="Helix Game Platform — Pacifica, South Beach Convention Center 8"><img src="images/img-0472.jpg" alt="Helix Game Platform — Pacifica, South Beach Convention Center 8" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0473.jpg" data-caption="Helix Game Platform — Pacifica, South Beach Convention Center 9"><img src="images/img-0474.jpg" alt="Helix Game Platform — Pacifica, South Beach Convention Center 9" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0475.jpg" data-caption="Helix Game Platform — Pacifica, South Beach Convention Center 10"><img src="images/img-0476.jpg" alt="Helix Game Platform — Pacifica, South Beach Convention Center 10" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0477.jpg" data-caption="Helix Game Platform — Pacifica, South Beach Convention Center 11"><img src="images/img-0478.jpg" alt="Helix Game Platform — Pacifica, South Beach Convention Center 11" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0479.jpg" data-caption="Helix Game Platform — Pacifica, South Beach Convention Center 12"><img src="images/img-0480.jpg" alt="Helix Game Platform — Pacifica, South Beach Convention Center 12" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0481.jpg" data-caption="Helix Game Platform — Pacifica, South Beach Convention Center 13"><img src="images/img-0482.jpg" alt="Helix Game Platform — Pacifica, South Beach Convention Center 13" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0483.jpg" data-caption="Helix Game Platform — Pacifica, South Beach Convention Center 14"><img src="images/img-0484.jpg" alt="Helix Game Platform — Pacifica, South Beach Convention Center 14" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0485.jpg" data-caption="Helix Game Platform — Pacifica, South Beach Convention Center 15"><img src="images/img-0486.jpg" alt="Helix Game Platform — Pacifica, South Beach Convention Center 15" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0487.jpg" data-caption="Helix Game Platform — Pacifica, South Beach Convention Center 16"><img src="images/img-0488.jpg" alt="Helix Game Platform — Pacifica, South Beach Convention Center 16" loading="lazy"></button>
+      </div>
+    </div>
+
+    <div id="levelart-panel5" class="gallery-block">
+      <div class="gb-hero-row">
+      <div class="gb-panel">
+        <h3><span class="i18n" data-fr="Helix - Pacifica - Rues de jour">Helix - Pacifica - Streets by day light</span></h3>
+        <p class="gb-note"><span class="i18n" data-fr="Création de quelques bâtiments et villas, toutes les routes, level art, habillage de végétation, composition d'environnement et habillage de niveaux.">Made some buildings and villas, all roads, level art, vegetation dressing, environment composition and set dressing.</span></p>
+      </div>
+        <div class="gb-hero-img">
+          <button type="button" class="gal-item" data-full="images/img-0489.jpg" data-caption="Helix Game Platform — Pacifica, Streets in day light"><img src="images/img-0490.jpg" alt="Helix Game Platform — Pacifica, Streets in day light" loading="lazy"></button>
+        </div>
+      </div>
+      <div class="gal-grid">
+<button type="button" class="gal-item" data-full="images/img-0492.jpg" data-caption="Helix Game Platform — Pacifica, Streets in day light 2"><img src="images/img-0493.jpg" alt="Helix Game Platform — Pacifica, Streets in day light 2" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0494.jpg" data-caption="Helix Game Platform — Pacifica, Streets in day light 3"><img src="images/img-0495.jpg" alt="Helix Game Platform — Pacifica, Streets in day light 3" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0496.jpg" data-caption="Helix Game Platform — Pacifica, Streets in day light 4"><img src="images/img-0497.jpg" alt="Helix Game Platform — Pacifica, Streets in day light 4" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0498.jpg" data-caption="Helix Game Platform — Pacifica, Streets in day light 5"><img src="images/img-0499.jpg" alt="Helix Game Platform — Pacifica, Streets in day light 5" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0500.jpg" data-caption="Helix Game Platform — Pacifica, Streets in day light 6"><img src="images/img-0501.jpg" alt="Helix Game Platform — Pacifica, Streets in day light 6" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0502.jpg" data-caption="Helix Game Platform — Pacifica, Streets in day light 7"><img src="images/img-0503.jpg" alt="Helix Game Platform — Pacifica, Streets in day light 7" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0504.jpg" data-caption="Helix Game Platform — Pacifica, Streets in day light 8"><img src="images/img-0505.jpg" alt="Helix Game Platform — Pacifica, Streets in day light 8" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0506.jpg" data-caption="Helix Game Platform — Pacifica, Streets in day light 9"><img src="images/img-0507.jpg" alt="Helix Game Platform — Pacifica, Streets in day light 9" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0508.jpg" data-caption="Helix Game Platform — Pacifica, Streets in day light 10"><img src="images/img-0509.jpg" alt="Helix Game Platform — Pacifica, Streets in day light 10" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0510.jpg" data-caption="Helix Game Platform — Pacifica, Streets in day light 11"><img src="images/img-0511.jpg" alt="Helix Game Platform — Pacifica, Streets in day light 11" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0512.jpg" data-caption="Helix Game Platform — Pacifica, Streets in day light 12"><img src="images/img-0513.jpg" alt="Helix Game Platform — Pacifica, Streets in day light 12" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0514.jpg" data-caption="Helix Game Platform — Pacifica, Streets in day light 13"><img src="images/img-0515.jpg" alt="Helix Game Platform — Pacifica, Streets in day light 13" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0516.jpg" data-caption="Helix Game Platform — Pacifica, Streets in day light 14"><img src="images/img-0517.jpg" alt="Helix Game Platform — Pacifica, Streets in day light 14" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0518.jpg" data-caption="Helix Game Platform — Pacifica, Streets in day light 15"><img src="images/img-0519.jpg" alt="Helix Game Platform — Pacifica, Streets in day light 15" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0520.jpg" data-caption="Helix Game Platform — Pacifica, Streets in day light 16"><img src="images/img-0521.jpg" alt="Helix Game Platform — Pacifica, Streets in day light 16" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0522.jpg" data-caption="Helix Game Platform — Pacifica, Streets in day light 17"><img src="images/img-0523.jpg" alt="Helix Game Platform — Pacifica, Streets in day light 17" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0524.jpg" data-caption="Helix Game Platform — Pacifica, Streets in day light 18"><img src="images/img-0525.jpg" alt="Helix Game Platform — Pacifica, Streets in day light 18" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0526.jpg" data-caption="Helix Game Platform — Pacifica, Streets in day light 19"><img src="images/img-0527.jpg" alt="Helix Game Platform — Pacifica, Streets in day light 19" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0528.jpg" data-caption="Helix Game Platform — Pacifica, Streets in day light 20"><img src="images/img-0529.jpg" alt="Helix Game Platform — Pacifica, Streets in day light 20" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0530.jpg" data-caption="Helix Game Platform — Pacifica, Streets in day light 21"><img src="images/img-0531.jpg" alt="Helix Game Platform — Pacifica, Streets in day light 21" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0532.jpg" data-caption="Helix Game Platform — Pacifica, Streets in day light 22"><img src="images/img-0533.jpg" alt="Helix Game Platform — Pacifica, Streets in day light 22" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0534.jpg" data-caption="Helix Game Platform — Pacifica, Streets in day light 23"><img src="images/img-0535.jpg" alt="Helix Game Platform — Pacifica, Streets in day light 23" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0536.jpg" data-caption="Helix Game Platform — Pacifica, Streets in day light 24"><img src="images/img-0537.jpg" alt="Helix Game Platform — Pacifica, Streets in day light 24" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0538.jpg" data-caption="Helix Game Platform — Pacifica, Streets in day light 25"><img src="images/img-0539.jpg" alt="Helix Game Platform — Pacifica, Streets in day light 25" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0540.jpg" data-caption="Helix Game Platform — Pacifica, Streets in day light 26"><img src="images/img-0541.jpg" alt="Helix Game Platform — Pacifica, Streets in day light 26" loading="lazy"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="levelart2-bg"><img src="images/img-0366.jpg" alt=""></div>
+<div class="levelart3-bg"><img src="images/img-0413.jpg" alt=""></div>
+<div class="levelart4-bg"><img src="images/img-0458.jpg" alt=""></div>
+<div class="levelart5-bg"><img src="images/img-0491.jpg" alt=""></div>
+<section id="modeling">
+  <div class="wrap">
+    <div class="section-head">
+      <h2><span class="i18n" data-fr="Modélisation</h2>">Modeling</h2></span>
+      <span class="idx mono">06</span>
+    </div>
+    <p style="max-width:70ch;color:var(--text-dim);margin-bottom:30px;"><span class="i18n" data-fr="Modélisation high &amp; low poly, sculpting, dépliage UV, baking de textures, matériaux, optimisation, LODs et collisions &mdash; 3DS Max, Substance Painter, Photoshop, ZBrush.">High &amp; low poly modeling, sculpting, UV unwrapping, texture baking, materials, optimization, LODs and collisions &mdash; 3DS Max, Substance Painter, Photoshop, ZBrush.</span></p>
+    <div id="modeling-panel2" class="modeling-block">
+      <div class="modeling-head">
+        <h3><span class="i18n" data-fr="Props de Hawken Reborn">Hawken Reborn props</span></h3>
+        <p class="gb-note"><span class="i18n" data-fr="Modélisation et décomposition de props pour Hawken Reborn.">Prop modeling and breakdown for Hawken Reborn.</span></p>
+      </div>
+      <h4 class="modeling-row-title">Big power core rack</h4>
+      <div class="modeling-row">
+        <div class="modeling-fixed-img">
+          <button type="button" class="gal-item" data-full="images/img-0587.jpg" data-caption="Hawken Reborn — prop sheet"><img src="images/img-0588.jpg" alt="Hawken Reborn — prop sheet" loading="lazy"></button>
+        </div>
+        <div class="filmstrip">
+<button type="button" class="gal-item" data-full="images/img-0589.jpg" data-caption="Hawken Reborn — HR Props01+02 Textures"><img src="images/img-0590.jpg" alt="Hawken Reborn — HR Props01+02 Textures" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0591.jpg" data-caption="Hawken Reborn — HR Props01+02 UV"><img src="images/img-0592.jpg" alt="Hawken Reborn — HR Props01+02 UV" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0593.jpg" data-caption="Hawken Reborn — HR Props01 Breakdown 01"><img src="images/img-0594.jpg" alt="Hawken Reborn — HR Props01 Breakdown 01" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0595.jpg" data-caption="Hawken Reborn — HR Props01 Breakdown 02"><img src="images/img-0596.jpg" alt="Hawken Reborn — HR Props01 Breakdown 02" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0597.jpg" data-caption="Hawken Reborn — HR Props01 Breakdown 03"><img src="images/img-0598.jpg" alt="Hawken Reborn — HR Props01 Breakdown 03" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0599.jpg" data-caption="Hawken Reborn — HR Props01 Breakdown 04"><img src="images/img-0600.jpg" alt="Hawken Reborn — HR Props01 Breakdown 04" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0601.jpg" data-caption="Hawken Reborn — HR Props01 Breakdown 05"><img src="images/img-0602.jpg" alt="Hawken Reborn — HR Props01 Breakdown 05" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0603.jpg" data-caption="Hawken Reborn — HR Props02 Breakdown 01"><img src="images/img-0604.jpg" alt="Hawken Reborn — HR Props02 Breakdown 01" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0605.jpg" data-caption="Hawken Reborn — HR Props02 Breakdown 02"><img src="images/img-0606.jpg" alt="Hawken Reborn — HR Props02 Breakdown 02" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0607.jpg" data-caption="Hawken Reborn — HR Props02 Breakdown 03"><img src="images/img-0608.jpg" alt="Hawken Reborn — HR Props02 Breakdown 03" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0609.jpg" data-caption="Hawken Reborn — HR Props02 Breakdown 04"><img src="images/img-0610.jpg" alt="Hawken Reborn — HR Props02 Breakdown 04" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0611.jpg" data-caption="Hawken Reborn — HR Props03 Breakdown 01"><img src="images/img-0612.jpg" alt="Hawken Reborn — HR Props03 Breakdown 01" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0613.jpg" data-caption="Hawken Reborn — HR Props03 Breakdown 02"><img src="images/img-0614.jpg" alt="Hawken Reborn — HR Props03 Breakdown 02" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0615.jpg" data-caption="Hawken Reborn — HR Props03 Breakdown 03"><img src="images/img-0616.jpg" alt="Hawken Reborn — HR Props03 Breakdown 03" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0617.jpg" data-caption="Hawken Reborn — HR Props03 Breakdown 04"><img src="images/img-0618.jpg" alt="Hawken Reborn — HR Props03 Breakdown 04" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0619.jpg" data-caption="Hawken Reborn — HR Props03 Textures"><img src="images/img-0620.jpg" alt="Hawken Reborn — HR Props03 Textures" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0621.jpg" data-caption="Hawken Reborn — HR Props03 UV"><img src="images/img-0622.jpg" alt="Hawken Reborn — HR Props03 UV" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0623.jpg" data-caption="Hawken Reborn — HR Props 007"><img src="images/img-0624.jpg" alt="Hawken Reborn — HR Props 007" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0625.jpg" data-caption="Hawken Reborn — HR Props 008"><img src="images/img-0626.jpg" alt="Hawken Reborn — HR Props 008" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0627.jpg" data-caption="Hawken Reborn — HR Props 009"><img src="images/img-0628.jpg" alt="Hawken Reborn — HR Props 009" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0629.jpg" data-caption="Hawken Reborn — HR Props 010"><img src="images/img-0630.jpg" alt="Hawken Reborn — HR Props 010" loading="lazy"></button>
+        </div>
+      </div>
+      <h4 class="modeling-row-title">Small power core rack</h4>
+      <div class="modeling-row">
+        <div class="modeling-fixed-img">
+          <button type="button" class="gal-item" data-full="images/img-0631.jpg" data-caption="Hawken Reborn — prop sheet 2"><img src="images/img-0632.jpg" alt="Hawken Reborn — prop sheet 2" loading="lazy"></button>
+        </div>
+        <div class="filmstrip">
+<button type="button" class="gal-item" data-full="images/img-0633.jpg" data-caption="Hawken Reborn — HR Props04 Breakdown 01"><img src="images/img-0634.jpg" alt="Hawken Reborn — HR Props04 Breakdown 01" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0635.jpg" data-caption="Hawken Reborn — HR Props04 Breakdown 02"><img src="images/img-0636.jpg" alt="Hawken Reborn — HR Props04 Breakdown 02" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0637.jpg" data-caption="Hawken Reborn — HR Props04 Breakdown 03"><img src="images/img-0638.jpg" alt="Hawken Reborn — HR Props04 Breakdown 03" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0639.jpg" data-caption="Hawken Reborn — HR Props04 Breakdown 04"><img src="images/img-0640.jpg" alt="Hawken Reborn — HR Props04 Breakdown 04" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0641.jpg" data-caption="Hawken Reborn — HR Props04 Breakdown 05"><img src="images/img-0642.jpg" alt="Hawken Reborn — HR Props04 Breakdown 05" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0643.jpg" data-caption="Hawken Reborn — HR Props 002"><img src="images/img-0644.jpg" alt="Hawken Reborn — HR Props 002" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0645.jpg" data-caption="Hawken Reborn — HR Props 003"><img src="images/img-0646.jpg" alt="Hawken Reborn — HR Props 003" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0647.jpg" data-caption="Hawken Reborn — HR Props 004"><img src="images/img-0648.jpg" alt="Hawken Reborn — HR Props 004" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0649.jpg" data-caption="Hawken Reborn — HR Props 005"><img src="images/img-0650.jpg" alt="Hawken Reborn — HR Props 005" loading="lazy"></button>
+      </div>
+      </div>
+      <h4 class="modeling-row-title">Jetty pieces</h4>
+      <div class="modeling-row">
+        <div class="modeling-fixed-img">
+          <button type="button" class="gal-item" data-full="images/img-0651.jpg" data-caption="Hawken Reborn — Jetty pieces"><img src="images/img-0652.jpg" alt="Hawken Reborn — Jetty pieces" loading="lazy"></button>
+        </div>
+        <div class="filmstrip">
+<button type="button" class="gal-item" data-full="images/img-0653.jpg" data-caption="Hawken Reborn — HR Props05 Breakdown 01"><img src="images/img-0654.jpg" alt="Hawken Reborn — HR Props05 Breakdown 01" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0655.jpg" data-caption="Hawken Reborn — HR Props05 Breakdown 02"><img src="images/img-0656.jpg" alt="Hawken Reborn — HR Props05 Breakdown 02" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0657.jpg" data-caption="Hawken Reborn — HR Props05 Breakdown 03"><img src="images/img-0658.jpg" alt="Hawken Reborn — HR Props05 Breakdown 03" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0659.jpg" data-caption="Hawken Reborn — HR Props 011"><img src="images/img-0660.jpg" alt="Hawken Reborn — HR Props 011" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0661.jpg" data-caption="Hawken Reborn — HR Props 012"><img src="images/img-0662.jpg" alt="Hawken Reborn — HR Props 012" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0663.jpg" data-caption="Hawken Reborn — HR Props 013"><img src="images/img-0664.jpg" alt="Hawken Reborn — HR Props 013" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0665.jpg" data-caption="Hawken Reborn — HR Props 014"><img src="images/img-0666.jpg" alt="Hawken Reborn — HR Props 014" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0667.jpg" data-caption="Hawken Reborn — HR Props 015"><img src="images/img-0668.jpg" alt="Hawken Reborn — HR Props 015" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0669.jpg" data-caption="Hawken Reborn — HR Props 016"><img src="images/img-0670.jpg" alt="Hawken Reborn — HR Props 016" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0671.jpg" data-caption="Hawken Reborn — HR Props 017"><img src="images/img-0672.jpg" alt="Hawken Reborn — HR Props 017" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0673.jpg" data-caption="Hawken Reborn — HR Props 018"><img src="images/img-0674.jpg" alt="Hawken Reborn — HR Props 018" loading="lazy"></button>
+        </div>
+      </div>
+      <h4 class="modeling-row-title">Cables &amp; pipes</h4>
+      <div class="modeling-row">
+        <div class="modeling-fixed-img">
+          <button type="button" class="gal-item" data-full="images/img-0675.jpg" data-caption="Hawken Reborn — Cables & pipes"><img src="images/img-0676.jpg" alt="Hawken Reborn — Cables & pipes" loading="lazy"></button>
+        </div>
+        <div class="filmstrip">
+<button type="button" class="gal-item" data-full="images/img-0677.jpg" data-caption="Hawken Reborn — HR Props07 Breakdown 01"><img src="images/img-0678.jpg" alt="Hawken Reborn — HR Props07 Breakdown 01" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0679.jpg" data-caption="Hawken Reborn — HR Props07 Breakdown 02"><img src="images/img-0680.jpg" alt="Hawken Reborn — HR Props07 Breakdown 02" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0681.jpg" data-caption="Hawken Reborn — HR Props07 Breakdown 03"><img src="images/img-0682.jpg" alt="Hawken Reborn — HR Props07 Breakdown 03" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0683.jpg" data-caption="Hawken Reborn — HR Props07 Breakdown 04"><img src="images/img-0684.jpg" alt="Hawken Reborn — HR Props07 Breakdown 04" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0685.jpg" data-caption="Hawken Reborn — HawkenReborn 019"><img src="images/img-0686.jpg" alt="Hawken Reborn — HawkenReborn 019" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0687.jpg" data-caption="Hawken Reborn — HawkenReborn 021"><img src="images/img-0688.jpg" alt="Hawken Reborn — HawkenReborn 021" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0689.jpg" data-caption="Hawken Reborn — HawkenReborn 022"><img src="images/img-0690.jpg" alt="Hawken Reborn — HawkenReborn 022" loading="lazy"></button>
+      </div>
+      </div>
+      <h4 class="modeling-row-title">Big Lighthouse tower</h4>
+      <div class="modeling-row">
+        <div class="modeling-fixed-img">
+          <button type="button" class="gal-item" data-full="images/img-0705.jpg" data-caption="Hawken Reborn — Big Lighthouse tower"><img src="images/img-0706.jpg" alt="Hawken Reborn — Big Lighthouse tower" loading="lazy"></button>
+        </div>
+        <div class="filmstrip">
+<button type="button" class="gal-item" data-full="images/img-0707.jpg" data-caption="Hawken Reborn — HR Props08 Breakdown 04"><img src="images/img-0708.jpg" alt="Hawken Reborn — HR Props08 Breakdown 04" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0709.jpg" data-caption="Hawken Reborn — HR Props08 Breakdown 05"><img src="images/img-0710.jpg" alt="Hawken Reborn — HR Props08 Breakdown 05" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0711.jpg" data-caption="Hawken Reborn — HR Props08 Breakdown 06"><img src="images/img-0712.jpg" alt="Hawken Reborn — HR Props08 Breakdown 06" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0713.jpg" data-caption="Hawken Reborn — HR Props08 Breakdown 07"><img src="images/img-0714.jpg" alt="Hawken Reborn — HR Props08 Breakdown 07" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0715.jpg" data-caption="Hawken Reborn — HawkenReborn 011"><img src="images/img-0716.jpg" alt="Hawken Reborn — HawkenReborn 011" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0717.jpg" data-caption="Hawken Reborn — HawkenReborn 014"><img src="images/img-0718.jpg" alt="Hawken Reborn — HawkenReborn 014" loading="lazy"></button>
+      </div>
+      </div>
+      <h4 class="modeling-row-title">Crashed ship pieces</h4>
+      <div class="modeling-row">
+        <div class="modeling-fixed-img">
+          <button type="button" class="gal-item" data-full="images/img-0719.jpg" data-caption="Hawken Reborn — Crashed ship pieces"><img src="images/img-0720.jpg" alt="Hawken Reborn — Crashed ship pieces" loading="lazy"></button>
+        </div>
+        <div class="filmstrip">
+<button type="button" class="gal-item" data-full="images/img-0721.jpg" data-caption="Hawken Reborn — HR Props09 Breakdown 01"><img src="images/img-0722.jpg" alt="Hawken Reborn — HR Props09 Breakdown 01" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0723.jpg" data-caption="Hawken Reborn — HR Props09 Breakdown 02"><img src="images/img-0724.jpg" alt="Hawken Reborn — HR Props09 Breakdown 02" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0725.jpg" data-caption="Hawken Reborn — HR Props09 Breakdown 03"><img src="images/img-0726.jpg" alt="Hawken Reborn — HR Props09 Breakdown 03" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0727.jpg" data-caption="Hawken Reborn — HR Props09 Breakdown 04"><img src="images/img-0728.jpg" alt="Hawken Reborn — HR Props09 Breakdown 04" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0729.jpg" data-caption="Hawken Reborn — HR Props09 Breakdown 05"><img src="images/img-0730.jpg" alt="Hawken Reborn — HR Props09 Breakdown 05" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0731.jpg" data-caption="Hawken Reborn — HawkenReborn 082"><img src="images/img-0732.jpg" alt="Hawken Reborn — HawkenReborn 082" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0733.jpg" data-caption="Hawken Reborn — HawkenReborn 084"><img src="images/img-0734.jpg" alt="Hawken Reborn — HawkenReborn 084" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0735.jpg" data-caption="Hawken Reborn — HawkenReborn 085"><img src="images/img-0736.jpg" alt="Hawken Reborn — HawkenReborn 085" loading="lazy"></button>
+      </div>
+      </div>
+      <h4 class="modeling-row-title">Modular pieces</h4>
+      <div class="modeling-row">
+        <div class="modeling-fixed-img">
+          <button type="button" class="gal-item" data-full="images/img-0737.jpg" data-caption="Hawken Reborn — Modular pieces"><img src="images/img-0738.jpg" alt="Hawken Reborn — Modular pieces" loading="lazy"></button>
+        </div>
+        <div class="filmstrip">
+<button type="button" class="gal-item" data-full="images/img-0739.jpg" data-caption="Hawken Reborn — HR Props08 Breakdown 01"><img src="images/img-0740.jpg" alt="Hawken Reborn — HR Props08 Breakdown 01" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0741.jpg" data-caption="Hawken Reborn — HR Props08 Breakdown 02"><img src="images/img-0742.jpg" alt="Hawken Reborn — HR Props08 Breakdown 02" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0743.jpg" data-caption="Hawken Reborn — HR Props08 Breakdown 03"><img src="images/img-0744.jpg" alt="Hawken Reborn — HR Props08 Breakdown 03" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0745.jpg" data-caption="Hawken Reborn — HR Props10 Breakdown 02"><img src="images/img-0746.jpg" alt="Hawken Reborn — HR Props10 Breakdown 02" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0747.jpg" data-caption="Hawken Reborn — HR Props10 Breakdown 04"><img src="images/img-0748.jpg" alt="Hawken Reborn — HR Props10 Breakdown 04" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0749.jpg" data-caption="Hawken Reborn — HawkenReborn 128"><img src="images/img-0750.jpg" alt="Hawken Reborn — HawkenReborn 128" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0751.jpg" data-caption="Hawken Reborn — HawkenReborn 129"><img src="images/img-0752.jpg" alt="Hawken Reborn — HawkenReborn 129" loading="lazy"></button>
+      </div>
+      </div>
+      <h4 class="modeling-row-title">Vegetation</h4>
+      <div class="modeling-row">
+        <div class="modeling-fixed-img">
+          <button type="button" class="gal-item" data-full="images/img-0753.jpg" data-caption="Hawken Reborn — Vegetation"><img src="images/img-0754.jpg" alt="Hawken Reborn — Vegetation" loading="lazy"></button>
+        </div>
+        <div class="filmstrip">
+<button type="button" class="gal-item" data-full="images/img-0755.jpg" data-caption="Hawken Reborn — HR Props06 Breakdown 01"><img src="images/img-0756.jpg" alt="Hawken Reborn — HR Props06 Breakdown 01" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0757.jpg" data-caption="Hawken Reborn — HR Props06 Breakdown 02"><img src="images/img-0758.jpg" alt="Hawken Reborn — HR Props06 Breakdown 02" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0759.jpg" data-caption="Hawken Reborn — HR Props06 Breakdown 03"><img src="images/img-0760.jpg" alt="Hawken Reborn — HR Props06 Breakdown 03" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0761.jpg" data-caption="Hawken Reborn — HR Props06 Breakdown 04"><img src="images/img-0762.jpg" alt="Hawken Reborn — HR Props06 Breakdown 04" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0763.jpg" data-caption="Hawken Reborn — HR Props06 Breakdown 05"><img src="images/img-0764.jpg" alt="Hawken Reborn — HR Props06 Breakdown 05" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0765.jpg" data-caption="Hawken Reborn — HR Props06 Breakdown 06"><img src="images/img-0766.jpg" alt="Hawken Reborn — HR Props06 Breakdown 06" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0767.jpg" data-caption="Hawken Reborn — HR Props06 Breakdown 07"><img src="images/img-0768.jpg" alt="Hawken Reborn — HR Props06 Breakdown 07" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0769.jpg" data-caption="Hawken Reborn — HR Props06 Breakdown 08"><img src="images/img-0770.jpg" alt="Hawken Reborn — HR Props06 Breakdown 08" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0771.jpg" data-caption="Hawken Reborn — HR Props06 Breakdown 09"><img src="images/img-0772.jpg" alt="Hawken Reborn — HR Props06 Breakdown 09" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0773.jpg" data-caption="Hawken Reborn — HR Props06 Breakdown 10"><img src="images/img-0774.jpg" alt="Hawken Reborn — HR Props06 Breakdown 10" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0775.jpg" data-caption="Hawken Reborn — HR Props06 Breakdown 12"><img src="images/img-0776.jpg" alt="Hawken Reborn — HR Props06 Breakdown 12" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0777.jpg" data-caption="Hawken Reborn — HR Props06 Breakdown 13"><img src="images/img-0778.jpg" alt="Hawken Reborn — HR Props06 Breakdown 13" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0779.jpg" data-caption="Hawken Reborn — HawkenReborn 010"><img src="images/img-0780.jpg" alt="Hawken Reborn — HawkenReborn 010" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0781.jpg" data-caption="Hawken Reborn — HawkenReborn 016"><img src="images/img-0782.jpg" alt="Hawken Reborn — HawkenReborn 016" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0783.jpg" data-caption="Hawken Reborn — HawkenReborn 034"><img src="images/img-0784.jpg" alt="Hawken Reborn — HawkenReborn 034" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0785.jpg" data-caption="Hawken Reborn — HawkenReborn 046"><img src="images/img-0786.jpg" alt="Hawken Reborn — HawkenReborn 046" loading="lazy"></button>
+      </div>
+      </div>
+    </div>
+    <div id="modeling-panel3" class="modeling-block">
+      <div class="modeling-head">
+        <h3><span class="i18n" data-fr="Props divers">Misc props</span></h3>
+      </div>
+      <h4 class="modeling-row-title">Generator</h4>
+      <div class="modeling-row">
+        <div class="modeling-fixed-img">
+          <button type="button" class="gal-item" data-full="images/img-0787.jpg" data-caption="Generator — reference vs 3D model"><img src="images/img-0788.jpg" alt="Generator — reference vs 3D model" loading="lazy"></button>
+        </div>
+        <div class="filmstrip">
+<button type="button" class="gal-item" data-full="images/img-0789.jpg" data-caption="Generator — Mesh"><img src="images/img-0790.jpg" alt="Generator — Mesh" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0791.jpg" data-caption="Generator — Show Textures"><img src="images/img-0792.jpg" alt="Generator — Show Textures" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0793.jpg" data-caption="Generator — screen01"><img src="images/img-0794.jpg" alt="Generator — screen01" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0795.jpg" data-caption="Generator — screen02"><img src="images/img-0796.jpg" alt="Generator — screen02" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0797.jpg" data-caption="Generator — screen03"><img src="images/img-0798.jpg" alt="Generator — screen03" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0799.jpg" data-caption="Generator — screen04"><img src="images/img-0800.jpg" alt="Generator — screen04" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0801.jpg" data-caption="Generator — screen05"><img src="images/img-0802.jpg" alt="Generator — screen05" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0803.jpg" data-caption="Generator — screen06"><img src="images/img-0804.jpg" alt="Generator — screen06" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0805.jpg" data-caption="Generator — screen07"><img src="images/img-0806.jpg" alt="Generator — screen07" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0807.jpg" data-caption="Generator — screen08"><img src="images/img-0808.jpg" alt="Generator — screen08" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0809.jpg" data-caption="Generator — screen09"><img src="images/img-0810.jpg" alt="Generator — screen09" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0811.jpg" data-caption="Generator — screen10"><img src="images/img-0812.jpg" alt="Generator — screen10" loading="lazy"></button>
+      </div>
+      </div>
+    </div>
+    <div id="modeling-panel4" class="modeling-block">
+      <div class="modeling-head">
+        <h3>UAYEB 1 &amp; 2</h3>
+      </div>
+      <h4 class="modeling-row-title">Concrete door frame</h4>
+      <div class="modeling-row">
+        <div class="modeling-fixed-img">
+          <button type="button" class="gal-item" data-full="images/img-0813.jpg" data-caption="UAYEB — Concrete door frame"><img src="images/img-0814.jpg" alt="UAYEB — Concrete door frame" loading="lazy"></button>
+        </div>
+        <div class="filmstrip">
+<button type="button" class="gal-item" data-full="images/img-0815.jpg" data-caption="UAYEB — Cryengine 005"><img src="images/img-0816.jpg" alt="UAYEB — Cryengine 005" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0817.jpg" data-caption="UAYEB — Cryengine 006"><img src="images/img-0818.jpg" alt="UAYEB — Cryengine 006" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0819.jpg" data-caption="UAYEB — Substance Painter 001"><img src="images/img-0820.jpg" alt="UAYEB — Substance Painter 001" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0821.jpg" data-caption="UAYEB — Substance Painter 002"><img src="images/img-0822.jpg" alt="UAYEB — Substance Painter 002" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0823.jpg" data-caption="UAYEB — Substance Painter 003"><img src="images/img-0824.jpg" alt="UAYEB — Substance Painter 003" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0825.jpg" data-caption="UAYEB — Substance Painter 004"><img src="images/img-0826.jpg" alt="UAYEB — Substance Painter 004" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0827.jpg" data-caption="UAYEB — Zbrush 001"><img src="images/img-0828.jpg" alt="UAYEB — Zbrush 001" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0829.jpg" data-caption="UAYEB — Zbrush 002"><img src="images/img-0830.jpg" alt="UAYEB — Zbrush 002" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0831.jpg" data-caption="UAYEB — Zbrush 003"><img src="images/img-0832.jpg" alt="UAYEB — Zbrush 003" loading="lazy"></button>
+      </div>
+      </div>
+      <h4 class="modeling-row-title">Vent</h4>
+      <div class="modeling-row">
+        <div class="modeling-fixed-img">
+          <button type="button" class="gal-item" data-full="images/img-0833.jpg" data-caption="UAYEB — Vent"><img src="images/img-0834.jpg" alt="UAYEB — Vent" loading="lazy"></button>
+        </div>
+        <div class="filmstrip">
+<button type="button" class="gal-item" data-full="images/img-0835.jpg" data-caption="UAYEB — Vent 01"><img src="images/img-0836.jpg" alt="UAYEB — Vent 01" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0837.jpg" data-caption="UAYEB — Vent 02"><img src="images/img-0838.jpg" alt="UAYEB — Vent 02" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0839.jpg" data-caption="UAYEB — Vent 03"><img src="images/img-0840.jpg" alt="UAYEB — Vent 03" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0841.jpg" data-caption="UAYEB — Vent 04"><img src="images/img-0842.jpg" alt="UAYEB — Vent 04" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0843.jpg" data-caption="UAYEB — Vent 05"><img src="images/img-0844.jpg" alt="UAYEB — Vent 05" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0845.jpg" data-caption="UAYEB — Vent 06"><img src="images/img-0846.jpg" alt="UAYEB — Vent 06" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0847.jpg" data-caption="UAYEB — Vent 07"><img src="images/img-0848.jpg" alt="UAYEB — Vent 07" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0849.jpg" data-caption="UAYEB — Vent 08"><img src="images/img-0850.jpg" alt="UAYEB — Vent 08" loading="lazy"></button>
+      </div>
+      </div>
+      <h4 class="modeling-row-title">Concrete platform</h4>
+      <div class="modeling-row">
+        <div class="modeling-fixed-img">
+          <button type="button" class="gal-item" data-full="images/img-0851.jpg" data-caption="UAYEB — Concrete platform"><img src="images/img-0852.jpg" alt="UAYEB — Concrete platform" loading="lazy"></button>
+        </div>
+        <div class="filmstrip">
+<button type="button" class="gal-item" data-full="images/img-0853.jpg" data-caption="UAYEB — Cryengine 008"><img src="images/img-0854.jpg" alt="UAYEB — Cryengine 008" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0855.jpg" data-caption="UAYEB — Cryengine 009"><img src="images/img-0856.jpg" alt="UAYEB — Cryengine 009" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0857.jpg" data-caption="UAYEB — Substance-Painter Platform"><img src="images/img-0858.jpg" alt="UAYEB — Substance-Painter Platform" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0859.jpg" data-caption="UAYEB — ZBrush 001"><img src="images/img-0860.jpg" alt="UAYEB — ZBrush 001" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0861.jpg" data-caption="UAYEB — ZBrush 002"><img src="images/img-0862.jpg" alt="UAYEB — ZBrush 002" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0863.jpg" data-caption="UAYEB — ZBrush 003"><img src="images/img-0864.jpg" alt="UAYEB — ZBrush 003" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0865.jpg" data-caption="UAYEB — ZBrush 004"><img src="images/img-0866.jpg" alt="UAYEB — ZBrush 004" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0867.jpg" data-caption="UAYEB — ZBrush 005"><img src="images/img-0868.jpg" alt="UAYEB — ZBrush 005" loading="lazy"></button>
+      </div>
+      </div>
+      <h4 class="modeling-row-title">Vegetation</h4>
+      <div class="modeling-row">
+        <div class="modeling-fixed-img">
+          <button type="button" class="gal-item" data-full="images/img-0869.jpg" data-caption="UAYEB — Vegetation"><img src="images/img-0870.jpg" alt="UAYEB — Vegetation" loading="lazy"></button>
+        </div>
+        <div class="filmstrip">
+<button type="button" class="gal-item" data-full="images/img-0871.jpg" data-caption="UAYEB — Cryengine 003"><img src="images/img-0872.jpg" alt="UAYEB — Cryengine 003" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0873.jpg" data-caption="UAYEB — Cryengine 004"><img src="images/img-0874.jpg" alt="UAYEB — Cryengine 004" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0875.jpg" data-caption="UAYEB — Tree 01 LOD0"><img src="images/img-0876.jpg" alt="UAYEB — Tree 01 LOD0" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0877.jpg" data-caption="UAYEB — Tree 01 LOD1"><img src="images/img-0878.jpg" alt="UAYEB — Tree 01 LOD1" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0879.jpg" data-caption="UAYEB — Tree 01 LOD2"><img src="images/img-0880.jpg" alt="UAYEB — Tree 01 LOD2" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0881.jpg" data-caption="UAYEB — Tree 01 LOD3"><img src="images/img-0882.jpg" alt="UAYEB — Tree 01 LOD3" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0883.jpg" data-caption="UAYEB — Trees"><img src="images/img-0884.jpg" alt="UAYEB — Trees" loading="lazy"></button>
+      </div>
+      </div>
+      <h4 class="modeling-row-title">Buildings</h4>
+      <div class="modeling-row">
+        <div class="modeling-fixed-img">
+          <button type="button" class="gal-item" data-full="images/img-0885.jpg" data-caption="UAYEB — Buildings"><img src="images/img-0886.jpg" alt="UAYEB — Buildings" loading="lazy"></button>
+        </div>
+        <div class="filmstrip">
+<button type="button" class="gal-item" data-full="images/img-0887.jpg" data-caption="UAYEB — Building 001"><img src="images/img-0888.jpg" alt="UAYEB — Building 001" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0889.jpg" data-caption="UAYEB — Building 002"><img src="images/img-0890.jpg" alt="UAYEB — Building 002" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0891.jpg" data-caption="UAYEB — Building 003"><img src="images/img-0892.jpg" alt="UAYEB — Building 003" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0893.jpg" data-caption="UAYEB — Building 004"><img src="images/img-0894.jpg" alt="UAYEB — Building 004" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0895.jpg" data-caption="UAYEB — Building 005"><img src="images/img-0896.jpg" alt="UAYEB — Building 005" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0897.jpg" data-caption="UAYEB — Building 006"><img src="images/img-0898.jpg" alt="UAYEB — Building 006" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0899.jpg" data-caption="UAYEB — Building 007"><img src="images/img-0900.jpg" alt="UAYEB — Building 007" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0901.jpg" data-caption="UAYEB — Building LOD0"><img src="images/img-0902.jpg" alt="UAYEB — Building LOD0" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0903.jpg" data-caption="UAYEB — Building LOD1"><img src="images/img-0904.jpg" alt="UAYEB — Building LOD1" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0905.jpg" data-caption="UAYEB — Building LOD2"><img src="images/img-0906.jpg" alt="UAYEB — Building LOD2" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0907.jpg" data-caption="UAYEB — Building LOD3"><img src="images/img-0908.jpg" alt="UAYEB — Building LOD3" loading="lazy"></button>
+      </div>
+      </div>
+      <h4 class="modeling-row-title">Props</h4>
+      <div class="modeling-row">
+        <div class="modeling-fixed-img">
+          <button type="button" class="gal-item" data-full="images/img-0909.jpg" data-caption="UAYEB — Props"><img src="images/img-0910.jpg" alt="UAYEB — Props" loading="lazy"></button>
+        </div>
+        <div class="filmstrip">
+<button type="button" class="gal-item" data-full="images/img-0911.jpg" data-caption="UAYEB — Uayeb Update 0001"><img src="images/img-0912.jpg" alt="UAYEB — Uayeb Update 0001" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0913.jpg" data-caption="UAYEB — Uayeb Update 0004"><img src="images/img-0914.jpg" alt="UAYEB — Uayeb Update 0004" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0915.jpg" data-caption="UAYEB — Uayeb Update 0005"><img src="images/img-0916.jpg" alt="UAYEB — Uayeb Update 0005" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0917.jpg" data-caption="UAYEB — Uayeb Update 0020"><img src="images/img-0918.jpg" alt="UAYEB — Uayeb Update 0020" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0919.jpg" data-caption="UAYEB — Uayeb Update 0021"><img src="images/img-0920.jpg" alt="UAYEB — Uayeb Update 0021" loading="lazy"></button>
+      </div>
+      </div>
+      <h4 class="modeling-row-title">Vehicle</h4>
+      <div class="modeling-row">
+        <div class="modeling-fixed-img">
+          <button type="button" class="gal-item" data-full="images/img-0921.jpg" data-caption="UAYEB — Vehicle"><img src="images/img-0922.jpg" alt="UAYEB — Vehicle" loading="lazy"></button>
+        </div>
+        <div class="filmstrip">
+<button type="button" class="gal-item" data-full="images/img-0923.jpg" data-caption="UAYEB — Buggy 002"><img src="images/img-0924.jpg" alt="UAYEB — Buggy 002" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0925.jpg" data-caption="UAYEB — Buggy 003"><img src="images/img-0926.jpg" alt="UAYEB — Buggy 003" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0927.jpg" data-caption="UAYEB — Buggy 004"><img src="images/img-0928.jpg" alt="UAYEB — Buggy 004" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0929.jpg" data-caption="UAYEB — Buggy 005"><img src="images/img-0930.jpg" alt="UAYEB — Buggy 005" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0931.jpg" data-caption="UAYEB — Buggy 006"><img src="images/img-0932.jpg" alt="UAYEB — Buggy 006" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0933.jpg" data-caption="UAYEB — Buggy 007"><img src="images/img-0934.jpg" alt="UAYEB — Buggy 007" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0935.jpg" data-caption="UAYEB — Buggy 008"><img src="images/img-0936.jpg" alt="UAYEB — Buggy 008" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0937.jpg" data-caption="UAYEB — Buggy 009"><img src="images/img-0938.jpg" alt="UAYEB — Buggy 009" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0939.jpg" data-caption="UAYEB — Buggy 010"><img src="images/img-0940.jpg" alt="UAYEB — Buggy 010" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0941.jpg" data-caption="UAYEB — Buggy LOD0"><img src="images/img-0942.jpg" alt="UAYEB — Buggy LOD0" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0943.jpg" data-caption="UAYEB — Buggy LOD1"><img src="images/img-0944.jpg" alt="UAYEB — Buggy LOD1" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0945.jpg" data-caption="UAYEB — Buggy LOD2"><img src="images/img-0946.jpg" alt="UAYEB — Buggy LOD2" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0947.jpg" data-caption="UAYEB — Buggy LOD3"><img src="images/img-0948.jpg" alt="UAYEB — Buggy LOD3" loading="lazy"></button>
+      </div>
+      </div>
+    </div>
+    <div id="modeling-panel1" class="modeling-block">
+      <div class="modeling-head">
+        <h3>Transhumance prototype</h3>
+        <p class="gb-note"><span class="i18n" data-fr="Modélisation de props / réutilisation d'assets Megascan modifiés avec les matériaux du projet, et intégration pour le prototype de direction artistique.">Props modeling / reuse of Megascan assets changed with project materials, and integration for the Artistic Direction prototype.</span></p>
+      </div>
+      <div class="modeling-row">
+        <div class="modeling-fixed-img">
+          <button type="button" class="gal-item" data-full="images/img-0569.jpg" data-caption="Transhumance prototype — full environment"><img src="images/img-0570.jpg" alt="Transhumance prototype — full environment" loading="lazy"></button>
+        </div>
+        <div class="filmstrip">
+<button type="button" class="gal-item" data-full="images/img-0571.jpg" data-caption="Transhumance — trees 1"><img src="images/img-0572.jpg" alt="Transhumance — trees 1" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0573.jpg" data-caption="Transhumance — trees 2"><img src="images/img-0574.jpg" alt="Transhumance — trees 2" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0575.jpg" data-caption="Transhumance — trees 3"><img src="images/img-0576.jpg" alt="Transhumance — trees 3" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0577.jpg" data-caption="Transhumance — trees 4"><img src="images/img-0578.jpg" alt="Transhumance — trees 4" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0579.jpg" data-caption="Transhumance — bushes"><img src="images/img-0580.jpg" alt="Transhumance — bushes" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0581.jpg" data-caption="Transhumance — rocks"><img src="images/img-0582.jpg" alt="Transhumance — rocks" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0583.jpg" data-caption="Transhumance — props 1"><img src="images/img-0584.jpg" alt="Transhumance — props 1" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0585.jpg" data-caption="Transhumance — props 2"><img src="images/img-0586.jpg" alt="Transhumance — props 2" loading="lazy"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="events-bg"><iframe src="https://www.youtube-nocookie.com/embed/TDQ1nAVQQdA?autoplay=1&mute=1&loop=1&playlist=TDQ1nAVQQdA&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title=""></iframe></div>
+<section id="events">
+  <div class="wrap">
+    <div class="section-head">
+      <h2><span class="i18n" data-fr="Événements">Events</span></h2>
+      <span class="idx mono">07</span>
+    </div>
+    <div class="gallery-block events-panel">
+      <h4 class="modeling-row-title"><span class="i18n" data-fr="Événements Uayeb">Uayeb events</span></h4>
+      <p class="gb-note" style="margin-bottom:16px;"><span class="i18n" data-fr="Événements présentant mon jeu UAYEB - The Dry Land, en France et à Singapour.">Events showcasing my game UAYEB - The Dry Land, in France, in Singapore.</span></p>
+      <p class="grid-label"><span class="i18n" data-fr="Images">Images</span></p>
+      <div class="gal-grid">
+<button type="button" class="gal-item" data-full="images/img-0949.jpg" data-caption="Hero Festival — Indie Garden, Grenoble, 2018"><img src="images/img-0950.jpg" alt="Hero Festival — Indie Garden, Grenoble, 2018" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0951.jpg" data-caption="Hero Festival — Indie Garden, Grenoble, 2018"><img src="images/img-0952.jpg" alt="Hero Festival — Indie Garden, Grenoble, 2018" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0953.jpg" data-caption="Hero Festival — Indie Garden, Grenoble, 2018"><img src="images/img-0954.jpg" alt="Hero Festival — Indie Garden, Grenoble, 2018" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0955.jpg" data-caption="Indie Prize — Casual Connect Asia, Singapore"><img src="images/img-0956.jpg" alt="Indie Prize — Casual Connect Asia, Singapore" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0957.jpg" data-caption="Indie Prize — Casual Connect Asia, Singapore"><img src="images/img-0958.jpg" alt="Indie Prize — Casual Connect Asia, Singapore" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0959.jpg" data-caption="Indie Prize — Casual Connect Asia, Singapore"><img src="images/img-0960.jpg" alt="Indie Prize — Casual Connect Asia, Singapore" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0961.jpg" data-caption="Indie Prize — Casual Connect Asia, Singapore"><img src="images/img-0962.jpg" alt="Indie Prize — Casual Connect Asia, Singapore" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0963.jpg" data-caption="Indie Prize — Casual Connect Asia, Singapore"><img src="images/img-0964.jpg" alt="Indie Prize — Casual Connect Asia, Singapore" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0965.jpg" data-caption="Indie Prize — Casual Connect Asia, Singapore"><img src="images/img-0966.jpg" alt="Indie Prize — Casual Connect Asia, Singapore" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0967.jpg" data-caption="Indie Prize — Casual Connect Asia, Singapore"><img src="images/img-0968.jpg" alt="Indie Prize — Casual Connect Asia, Singapore" loading="lazy"></button>
+      </div>
+      <p class="grid-label"><span class="i18n" data-fr="Vidéos">Videos</span></p>
+      <div class="gal-grid video-grid video-grid-3">
+<a class="gal-item video-item" href="https://www.youtube.com/watch?v=GN5c3B6RqaI" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/GN5c3B6RqaI/hqdefault.jpg" alt="Video"></a>
+<a class="gal-item video-item" href="https://www.youtube.com/watch?v=TDQ1nAVQQdA" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/TDQ1nAVQQdA/hqdefault.jpg" alt="Video"></a>
+<a class="gal-item video-item" href="https://www.youtube.com/watch?v=XqfFWLOVJLg" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/XqfFWLOVJLg/hqdefault.jpg" alt="Video"></a>
+      </div>
+      <h4 class="modeling-row-title"><span class="i18n" data-fr="Vidéos d'autres projets">Other projects videos</span></h4>
+      <p class="gb-note" style="margin-bottom:16px;">Ubisoft Flashback - Helix game platform - Transhumance</p>
+      <p class="grid-label"><span class="i18n" data-fr="Vidéos">Videos</span></p>
+      <div class="gal-grid video-grid video-grid-3">
+<a class="gal-item video-item" href="https://www.youtube.com/watch?v=-fYIkmi9_nA" target="_blank" rel="noopener"><img src="images/img-0970.jpg" alt="Video"></a>
+<a class="gal-item video-item" href="https://www.youtube.com/watch?v=RJCtrOMu1Ck" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/RJCtrOMu1Ck/hqdefault.jpg" alt="Video"></a>
+<a class="gal-item video-item" href="https://www.youtube.com/watch?v=vamENDdZJ4I" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/vamENDdZJ4I/hqdefault.jpg" alt="Video"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="music">
+  <div class="wrap">
+    <div class="section-head">
+      <h2><span class="i18n" data-fr="Musique &amp; Son">Music &amp; Sound</span></h2>
+      <span class="idx mono">08</span>
+    </div>
+    <div class="music-grid">
+      <div>
+        <p style="color:var(--text-dim);max-width:56ch;"><span class="i18n" data-fr="Je joue de la guitare depuis 1979 et je compose de la musique depuis 1986. J'ai écrit et enregistré deux albums personnels disponibles sur Spotify et d'autres plateformes musicales, ainsi que les bandes-son originales et le sound design de ma série de jeux UAYEB.">I'm playing guitar since 1979 and composing music since 1986. I wrote and recorded two personal music albums available on Spotify and other music apps, as well as original soundtracks and made the sound design for my UAYEB game series.</span></p>
+        <div class="software-list" style="margin-top:24px;">
+          <div class="software-item"><div class="row"><span class="sw-name">Cakewalk Pro</span><span class="sw-level">Expert &middot; since 1990</span></div><div style="color:var(--muted);font-size:.82rem;margin-top:4px;"><span class="i18n" data-fr="Écriture et édition de partitions.">Score writing and editing.</span></div></div>
+          <div class="software-item"><div class="row"><span class="sw-name">Ableton Live</span><span class="sw-level">Expert &middot; since 2012</span></div><div style="color:var(--muted);font-size:.82rem;margin-top:4px;"><span class="i18n" data-fr="Édition musique et son, mixage, FX.">Music and sound editing, mixing, FX.</span></div></div>
+          <div class="software-item"><div class="row"><span class="sw-name">Wwise</span><span class="sw-level">Fluent &middot; since 2015</span></div><div style="color:var(--muted);font-size:.82rem;margin-top:4px;"><span class="i18n" data-fr="Événements sonores, banques de sons, distance sonore 3D.">Sound events, sound banks, 3D sound distance.</span></div></div>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow" style="margin-bottom:12px;"><span class="i18n" data-fr="Sorties">Releases</span></p>
+        <ul class="release-list">
+          <li><div class="r-title">UAYEB &mdash; Purgatory, Episode 2</div><div class="r-meta"><span class="i18n" data-fr="Prototype sur Steam &middot; bandes-son de jeu &amp; sound design">Prototype on Steam &middot; Game soundtracks &amp; sound design</span></div></li>
+          <li><div class="r-title">UAYEB &mdash; The Dry Land, Episode 1</div><div class="r-meta"><span class="i18n" data-fr="2018 &middot; Steam / Humble Bundle &middot; 3 bandes-son originales, guitares, enregistrement, mixage et sound design">2018 &middot; Steam / Humble Bundle &middot; 3 original soundtracks, guitars, recording, mixing, and sound design</span></div></li>
+          <li><div class="r-title">ICA: United Planet Of Earth</div><div class="r-meta"><span class="i18n" data-fr="2013 &middot; CD Digipack + streaming &middot; 9 titres originaux, guitares, chant">2013 &middot; CD Digipack + streaming &middot; 9 original tracks, guitars, vocals</span></div></li>
+          <li><div class="r-title">Francis Courchinoux: The Five Seasons</div><div class="r-meta"><span class="i18n" data-fr="2006 &middot; CD + streaming &middot; 9 titres originaux, guitares, chant">2006 &middot; CD + streaming &middot; 9 original tracks, guitars, vocals</span></div></li>
+          <li><div class="r-title">No Respect</div><div class="r-meta"><span class="i18n" data-fr="2001 &middot; Album démo &middot; 8 titres originaux">2001 &middot; Album demo &middot; 8 original tracks</span></div></li>
+          <li><div class="r-title">C4</div><div class="r-meta"><span class="i18n" data-fr="1997 &middot; Bande-son de jeu vidéo &amp; sound design">1997 &middot; Video game soundtrack &amp; sound design</span></div></li>
+          <li><div class="r-title">Desdemona: Moonlight Slaughter</div><div class="r-meta"><span class="i18n" data-fr="1993 &middot; Cassette audio &middot; Composition de 3 titres originaux, guitares, chant">1993 &middot; Cassette tape &middot; Composition of 3 original tracks, playing guitars, singing.</span></div></li>
+          <li><div class="r-title">Desdemona Advanced tape</div><div class="r-meta"><span class="i18n" data-fr="1992 &middot; Cassette audio &middot; Composition de 4 titres originaux, guitares, chant">1992 &middot; Cassette tape &middot; Composition of 4 original tracks, playing guitars, singing.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="music2-bg"><iframe src="https://www.youtube-nocookie.com/embed/KhYNmDBdlLs?autoplay=1&mute=1&loop=1&playlist=KhYNmDBdlLs&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title=""></iframe></div>
+<section id="music-part2" class="music-part2">
+  <div class="wrap">
+    <p class="grid-label"><span class="i18n" data-fr="Images">Images</span></p>
+    <div class="gal-grid">
+<button type="button" class="gal-item" data-full="images/img-1007.jpg" data-caption="Cakewalk Pro — score writing"><img src="images/img-1008.jpg" alt="Cakewalk Pro — score writing" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-1009.jpg" data-caption="Cakewalk Pro — score writing"><img src="images/img-1010.jpg" alt="Cakewalk Pro — score writing" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-1011.jpg" data-caption="Live performance"><img src="images/img-1012.jpg" alt="Live performance" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-1013.jpg" data-caption="Live performance"><img src="images/img-1014.jpg" alt="Live performance" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-1041.jpg" data-caption="Wwise — sound implementation"><img src="images/img-1042.jpg" alt="Wwise — sound implementation" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-1015.jpg" data-caption="Live performance — on stage"><img src="images/img-1016.jpg" alt="Live performance — on stage" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-1017.jpg" data-caption="Live performance — on stage"><img src="images/img-1018.jpg" alt="Live performance — on stage" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-1019.jpg" data-caption="Live performance — on stage"><img src="images/img-1020.jpg" alt="Live performance — on stage" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-1021.jpg" data-caption="Live performance — on stage"><img src="images/img-1022.jpg" alt="Live performance — on stage" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-1023.jpg" data-caption="Live performance — on stage"><img src="images/img-1024.jpg" alt="Live performance — on stage" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-1025.jpg" data-caption="Live performance — on stage"><img src="images/img-1026.jpg" alt="Live performance — on stage" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-1027.jpg" data-caption="Live performance — on stage"><img src="images/img-1028.jpg" alt="Live performance — on stage" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-1029.jpg" data-caption="Live performance — on stage"><img src="images/img-1030.jpg" alt="Live performance — on stage" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-1031.jpg" data-caption="Live performance — on stage"><img src="images/img-1032.jpg" alt="Live performance — on stage" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-1033.jpg" data-caption="Live performance — on stage"><img src="images/img-1034.jpg" alt="Live performance — on stage" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-1035.jpg" data-caption="Live performance — on stage"><img src="images/img-1036.jpg" alt="Live performance — on stage" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-1037.jpg" data-caption="Live performance — on stage"><img src="images/img-1038.jpg" alt="Live performance — on stage" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-1039.jpg" data-caption="Live performance — on stage"><img src="images/img-1040.jpg" alt="Live performance — on stage" loading="lazy"></button>
+    </div>
+    <p class="grid-label" style="margin-top:32px;"><span class="i18n" data-fr="Vidéos">Videos</span></p>
+    <div class="gal-grid video-grid video-grid-3">
+<a class="gal-item video-item" href="https://youtu.be/KhYNmDBdlLs" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/KhYNmDBdlLs/hqdefault.jpg" alt="Video"></a>
+<a class="gal-item video-item" href="https://youtu.be/t-HPjOiwTDM" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/t-HPjOiwTDM/hqdefault.jpg" alt="Video"></a>
+<a class="gal-item video-item" href="https://youtu.be/dM-ZMkb_jOE" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/dM-ZMkb_jOE/hqdefault.jpg" alt="Video"></a>
+<a class="gal-item video-item" href="https://youtu.be/l5DhyjBRVpI" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/l5DhyjBRVpI/hqdefault.jpg" alt="Video"></a>
+<a class="gal-item video-item" href="https://youtu.be/WqLu9tGcVYY" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/WqLu9tGcVYY/hqdefault.jpg" alt="Video"></a>
+<a class="gal-item video-item" href="https://youtu.be/yjdM6O1I1cM" target="_blank" rel="noopener"><img src="https://img.youtube.com/vi/yjdM6O1I1cM/hqdefault.jpg" alt="Video"></a>
+    </div>
+    <p class="grid-label" style="margin-top:32px;"><span class="i18n" data-fr="Sons">Sounds</span></p>
+    <div class="audio-list">
+      <div class="audio-item">
+        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A757317586&color=ff5500"></iframe>
+        <div class="audio-credit"><a href="https://soundcloud.com/user-2012458" title="ICAZIK" target="_blank" rel="noopener">ICAZIK</a> &middot; <a href="https://soundcloud.com/user-2012458/uayeb-the-dry-land-episode-1-music-sound-track-01" title="UAYEB - The Dry Land - Episode 1 - Music sound track 01" target="_blank" rel="noopener">UAYEB - The Dry Land - Episode 1 - Music sound track 01</a></div>
+      </div>
+      <div class="audio-item">
+        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/user-2012458/uayeb-the-dry-land-episode-1-musictrack-02&color=ff5500"></iframe>
+        <div class="audio-credit"><a href="https://soundcloud.com/user-2012458" title="ICAZIK" target="_blank" rel="noopener">ICAZIK</a> &middot; <a href="https://soundcloud.com/user-2012458/uayeb-the-dry-land-episode-1-musictrack-02" title="UAYEB - The Dry Land - Episode 1 - MusicTrack 02" target="_blank" rel="noopener">UAYEB - The Dry Land - Episode 1 - MusicTrack 02</a></div>
+      </div>
+      <div class="audio-item">
+        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/user-2012458/uayeb-the-dry-land-episode-1-musictrack-03&color=ff5500"></iframe>
+        <div class="audio-credit"><a href="https://soundcloud.com/user-2012458" title="ICAZIK" target="_blank" rel="noopener">ICAZIK</a> &middot; <a href="https://soundcloud.com/user-2012458/uayeb-the-dry-land-episode-1-musictrack-03" title="UAYEB - The Dry Land - Episode 1 - MusicTrack 03" target="_blank" rel="noopener">UAYEB - The Dry Land - Episode 1 - MusicTrack 03</a></div>
+      </div>
+      <div class="audio-item">
+        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/user-2012458/uayeb-the-dry-land-episode-1-death&color=ff5500"></iframe>
+        <div class="audio-credit"><a href="https://soundcloud.com/user-2012458" title="ICAZIK" target="_blank" rel="noopener">ICAZIK</a> &middot; <a href="https://soundcloud.com/user-2012458/uayeb-the-dry-land-episode-1-death" title="UAYEB - The Dry Land - Episode 1 - Death" target="_blank" rel="noopener">UAYEB - The Dry Land - Episode 1 - Death</a></div>
+      </div>
+      <div class="audio-item">
+        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/user-2012458/playground-sample-01&color=ff5500"></iframe>
+        <div class="audio-credit"><a href="https://soundcloud.com/user-2012458" title="ICAZIK" target="_blank" rel="noopener">ICAZIK</a> &middot; <a href="https://soundcloud.com/user-2012458/playground-sample-01" title="Playground Sample 01" target="_blank" rel="noopener">Playground Sample 01</a></div>
+      </div>
+      <div class="audio-item">
+        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/user-2012458/ephemeral&color=ff5500"></iframe>
+        <div class="audio-credit"><a href="https://soundcloud.com/user-2012458" title="ICAZIK" target="_blank" rel="noopener">ICAZIK</a> &middot; <a href="https://soundcloud.com/user-2012458/ephemeral" title="Ephemeral" target="_blank" rel="noopener">Ephemeral</a></div>
+      </div>
+      <div class="audio-item">
+        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/user-2012458/and-you-live-your-life&color=ff5500"></iframe>
+        <div class="audio-credit"><a href="https://soundcloud.com/user-2012458" title="ICAZIK" target="_blank" rel="noopener">ICAZIK</a> &middot; <a href="https://soundcloud.com/user-2012458/and-you-live-your-life" title="And You Live Your Life" target="_blank" rel="noopener">And You Live Your Life</a></div>
+      </div>
+      <div class="audio-item">
+        <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/user-2012458/routine-of-a-life-time&color=ff5500"></iframe>
+        <div class="audio-credit"><a href="https://soundcloud.com/user-2012458" title="ICAZIK" target="_blank" rel="noopener">ICAZIK</a> &middot; <a href="https://soundcloud.com/user-2012458/routine-of-a-life-time" title="Routine of a Life Time" target="_blank" rel="noopener">Routine of a Life Time</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="personality">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="i18n" data-fr="<h2>Tests de personnalité</h2>"><h2>Personality Tests</h2></span>
+      <span class="idx mono">09</span>
+    </div>
+    <p style="max-width:70ch;color:var(--text-dim);margin-bottom:30px;"><span class="i18n" data-fr="Tests réalisés avec <a href=&quot;https://www.alvalabs.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>Alva Labs</a>.">Tests done with <a href="https://www.alvalabs.io/" target="_blank" rel="noopener">Alva Labs</a>.</span></p>
+    <div class="gallery-block">
+      <div class="gal-grid">
+<button type="button" class="gal-item" data-full="images/img-0243.jpg" data-caption="Logical Ability"><img src="images/img-0244.jpg" alt="Logical Ability" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0245.jpg" data-caption="Personality Profile — Overview"><img src="images/img-0246.jpg" alt="Personality Profile — Overview" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0247.jpg" data-caption="Agreeableness"><img src="images/img-0248.jpg" alt="Agreeableness" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0249.jpg" data-caption="Conscientiousness"><img src="images/img-0250.jpg" alt="Conscientiousness" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0251.jpg" data-caption="Extraversion"><img src="images/img-0252.jpg" alt="Extraversion" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0253.jpg" data-caption="Emotional Stability"><img src="images/img-0254.jpg" alt="Emotional Stability" loading="lazy"></button>
+<button type="button" class="gal-item" data-full="images/img-0255.jpg" data-caption="Openness to Experience"><img src="images/img-0256.jpg" alt="Openness to Experience" loading="lazy"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sunset-bg"><img src="images/img-1043.jpg" alt="HELIX Pacifica sunset"></div>
+<section id="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <h2><span class="i18n" data-fr="Ce qu'ils disent de lui">What People Say</span></h2>
+      <span class="idx mono">10</span>
+    </div>
+    <div class="quote-scroll">
+      <div class="quote-card"><p>I worked with Francis during our time at Hypersonic Laboratories. It has been incredible working with him. His dedication to the project and it's vision is 2nd to none. Francis has worked tirelessly, through extreme project turbulence to deliver, time and time again. I have no doubts he'd make a fantastic asset to any team.</p><div class="who"><b>Ross Hankinson</b><span>Tech Artist, Hypersonic Labs</span></div></div>
+      <div class="quote-card"><p>Francis is the kind of team player every art manager wants on his/her team. He's dedicated, thorough in his practices, a great mentor to the juniors on the team and does a first class job with everything thrown at him.</p><div class="who"><b>Mitch Phillips</b><span>Art Manager / Art Director, DR-Studios</span></div></div>
+      <div class="quote-card"><p>Francis was an absolute pleasure to work with, very patient and could never do enough to help you. I learned so much from him and my skills transformed as a 3D Environment Artist.</p><div class="who"><b>Stuart Wilson</b><span>3D Environment Artist, DR-Studios</span></div></div>
+      <div class="quote-card"><p>Francis is the kind of colleague everyone likes having&mdash;friendly, professional, engaging, and open to communication&mdash;but he is also a highly skilled artist and a passionate gamer with a critical eye and sound advice.</p><div class="who"><b>Matthieu Leveder</b><span>Engineer, VectorCell</span></div></div>
+      <div class="quote-card"><p>Francis is a key person in a production. He is a complete artist. His artistic and technical skills are excellent. I really appreciate to work with him.</p><div class="who"><b>Cl&eacute;ment Bassery</b><span>Props Artist, VectorCell</span></div></div>
+      <div class="quote-card"><p>Francis has extensive experience in the video game industry and has done a remarkable job creating futuristic environments. It was a pleasure to work with him.</p><div class="who"><b>Christophe Devaux</b><span>3D Director &amp; Animator, VectorCell</span></div></div>
+      <div class="quote-card"><p>A highly skilled professional with vast experience in many fields related to the videogame industry &hellip; a brilliant project lead with strong competence in project and resource management.</p><div class="who"><b>Francesco Musso</b><span>Lead QA, Vivendi Universal Games</span></div></div>
+      <div class="quote-card"><p>One of the most meticulous and creative guys I've ever had the pleasure of working with. His wide-ranging knowledge of game design, digital art, sound engineering and project planning makes him an ideal asset in any team.</p><div class="who"><b>Ren&eacute; Laurent</b><span>QA Tester, Vivendi Universal Games</span></div></div>
+      <div class="quote-card"><p>I worked with Francis on many high profile games while working in Vivendi. I found him to be very professional and an absolute pleasure to work with. He never got stressed under pressure with tight deadlines and was always willing to help other departments to locate and solve issues that arose. His artistic abilities also impressed me and I always looked forward to seeing his 3D creations. He is a very valuable person to have in any company.</p><div class="who"><b>Anthony Fitzgerald</b><span>Lead Engineer, Vivendi Universal Games</span></div></div>
+      <div class="quote-card"><p>I really appreciated Francis as a colleague. Francis was always professional in everything he did. He also played a significant role in setting high standards in the QA department. Francis would be an asset to any team.</p><div class="who"><b>Veronika Mang</b><span>QA Lead, Vivendi Universal Games</span></div></div>
+      <div class="quote-card"><p>I worked with Francis over a period of 4 years in Vivendi, and always found him to be an very organised, competent and approchable collegue with a wide-ranging knowledge of many applications.</p><div class="who"><b>Sarah Brennan</b><span>QA Lead, Vivendi Universal Games</span></div></div>
+      <div class="quote-card"><p>During my tenure at Vivendi Universal Games I reported directly to Francis Courchinoux. I found Francis a pleasure to work for. He had a keen eye for detail and was calm and collected under pressure. His organisational skills were an important factor for me and I was able to take some of that with me to my next job.</p><div class="who"><b>Anthony Mackey</b><span>QA Tester, Vivendi Universal Games</span></div></div>
+      <div class="quote-card"><p>Francis is a detail-oriented manager without losing sight of the strategic objective.</p><div class="who"><b>Lara Lanciotti</b><span>QA Tester, Vivendi Universal Games</span></div></div>
+      <div class="quote-card"><p>I worked alongside Francis for quite some time at Vivendi Universal Games and I always found Francis to be an excellent QA lead. During my time I worked on many titles with myself as the Lead graphic artist and Francis as Lead QA. Francis was always willing to help out when I needed a little assistance on bugs. He was always well informed and fully aware of what his junior QA testers were doing so that he was really the only point of contact I needed. Working with Francis was always a pleasure, since he is a great guy as well as a hard worker.</p><div class="who"><b>David Fleming</b><span>Lead graphic artist, Vivendi Universal Games</span></div></div>
+      <div class="quote-card"><p>I watched Fancis' 3d skills develop in the time he was with Vivendi Games. I couldn't believe how quickly he learnt the art of 3d! He is an amazing talent!!</p><div class="who"><b>Bill Sweeney</b><span>Lead graphic artist, Vivendi Universal Games</span></div></div>
+      <div class="quote-card"><p>I worked with Francis on several games during my time at Vivendi. His high level of understanding of the game localisation processes and his QA skills made him an outstanding QA lead. He is fun to work with and he has a great personality. I would not hesitate recommending him to anyone.</p><div class="who"><b>Attila Edelenyi</b><span>Lead Engineer, Vivendi Universal Games</span></div></div>
+      <div class="quote-card"><p>Francis was very organised and dedicated team lead. He had strong leadership qualities and excelled at building high performance teams. I found Francis to be a good communicator and motivator during my time in his team.</p><div class="who"><b>B&aacute;irbre Bent</b><span>QA Tester, Vivendi Universal Games</span></div></div>
+      <div class="quote-card"><p>Francis was my lead for a large project during my time in Vivendi as a localisation games tester. His main qualities as a lead remain on his management and social skills as well as a highly methodical coordination of tasks; always under a close eye.</p><div class="who"><b>Borja Guillan</b><span>QA Tester, Vivendi Universal Games</span></div></div>
+      <div class="quote-card"><p>Francis was an outstanding QA lead in Vivendi Universal Games. He was focused on games, professional in his work, and he was always calm and resourceful, even when under pressure. His artistic and organizational abilities make him a great asset to the games industry.</p><div class="who"><b>Pearse Finegan</b><span>Project Manager, Vivendi Universal Games</span></div></div>
+      <div class="quote-card"><p>I worked with Francis for 3 years in a Game project development group. I really appreciated him as well in terms of human relationship as in terms of his professionalism. Francis was in charge of Music &amp; SFX and performed several great original pieces, mixing Electric Guitar and Keyboards at a time where it was not usual. As a Sound Effect Designer He often amazed me, and managed to give a specific sound atmosphere to the game. I'll be pleased to work with him again, as he is tireless when he starts a project or simply a task.</p><div class="who"><b>Nadir Boussoukaia</b><span>Project Manager/Lead Engineer, Excess Development</span></div></div>
+      <div class="quote-card"><p>Francis has always demonstrated an undestructable motivation in his work and group working relationships. He is undoubtly a very talented musician but has also been constantly interested in video games and graphics. He has certainly progressed in that area as well and shows a professional attitude to his work and his colleagues. A great guy to know and work with.</p><div class="who"><b>Roger Rosa</b><span>Lead Artist, Excess Development</span></div></div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="eyebrow" style="margin-bottom:10px;"><span class="i18n" data-fr="Construisons un monde">Let's build a world</span></p>
+        <h2><span class="i18n" data-fr="Prenons contact">Get in touch</span></h2>
+      </div>
+      <div class="foot-links">
+        <a class="btn primary" href="https://www.artstation.com/frux" target="_blank" rel="noopener">Artstation &rarr;</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/fcourchinoux" target="_blank" rel="noopener">LinkedIn &rarr;</a>
+        <a class="btn ghost" href="#" id="email-btn" data-u="uayeb" data-d="icagames.com">Email &rarr;</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span><span class="i18n" data-fr="Francis Courchinoux &mdash; Lead / Senior Environment Artist, Level Art">Francis Courchinoux &mdash; Lead / Senior Environment Artist, Level Art</span></span>
+      <span class="mono"><span class="i18n" data-fr="Portfolio, modernisé en 2026">Portfolio, modernized 2026</span></span>
+    </div>
+  </div>
+</footer>
+
+
+<style>
+  .gal-item{all:unset;display:block;cursor:zoom-in;box-sizing:border-box;width:100%;height:100%;}
+  .gal-grid a, .gal-grid .gal-item{display:block;aspect-ratio:16/10;overflow:hidden;border:1px solid var(--line);background:var(--surface-2);}
+  .gal-grid img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease;}
+  .gal-grid .gal-item:hover img{transform:scale(1.06);}
+  #lightbox{position:fixed;inset:0;z-index:200;background:rgba(6,5,3,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;cursor:zoom-out;}
+  #lightbox[hidden]{display:none;}
+  #lightbox img{max-width:96vw;max-height:92vh;object-fit:contain;border:1px solid var(--line);box-shadow:var(--shadow);cursor:default;}
+  #lightbox .lb-cap{margin-top:16px;color:#efe9dd;font-family:'JetBrains Mono',monospace;font-size:.82rem;letter-spacing:.03em;text-align:center;max-width:80ch;}
+  #lightbox .lb-close{position:absolute;top:20px;right:24px;background:none;border:1px solid rgba(255,255,255,.3);color:#efe9dd;width:38px;height:38px;border-radius:50%;font-size:1.1rem;cursor:pointer;}
+  #lightbox .lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(10,8,5,.4);border:1px solid rgba(255,255,255,.3);color:#efe9dd;width:44px;height:44px;border-radius:50%;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+  #lightbox .lb-nav:hover{background:rgba(10,8,5,.7);}
+  #lightbox .lb-prev{left:16px;}
+  #lightbox .lb-next{right:16px;}
+  #lightbox .lb-nav[hidden]{display:none;}
+  @media (max-width:640px){ #lightbox .lb-nav{width:36px;height:36px;font-size:1.05rem;} #lightbox .lb-prev{left:6px;} #lightbox .lb-next{right:6px;} }
+</style>
+
+<div id="lightbox" hidden>
+  <button class="lb-close" type="button" aria-label="Close">&times;</button>
+  <button class="lb-nav lb-prev" type="button" aria-label="Previous">&#8249;</button>
+  <button class="lb-nav lb-next" type="button" aria-label="Next">&#8250;</button>
+  <img id="lightbox-img" src="" alt="">
+  <div class="lb-cap" id="lightbox-cap"></div>
+</div>
+<script>
+(function(){
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightbox-img');
+  const cap = document.getElementById('lightbox-cap');
+  const prevBtn = lb.querySelector('.lb-prev');
+  const nextBtn = lb.querySelector('.lb-next');
+  let group = [];
+  let index = -1;
+
+  function show(i){
+    if (!group.length) return;
+    index = (i + group.length) % group.length;
+    const item = group[index];
+    img.src = item.getAttribute('data-full');
+    cap.textContent = item.getAttribute('data-caption') || '';
+    const multi = group.length > 1;
+    prevBtn.hidden = !multi;
+    nextBtn.hidden = !multi;
+  }
+
+  document.addEventListener('click', function(e){
+    const item = e.target.closest('.gal-item');
+    if (item) {
+      const grid = item.closest('#lighting1, #lighting2, #lighting3, #lighting4, #levelart-panel, #levelart-panel2, #levelart-panel3, #levelart-panel4, #levelart-panel5, #modeling-panel1, #modeling-panel2, #modeling-panel3, #modeling-panel4, #games') || item.closest('.gal-grid');
+      group = grid ? Array.from(grid.querySelectorAll('.gal-item')) : [item];
+      show(group.indexOf(item));
+      lb.hidden = false;
+      return;
+    }
+    if (e.target.closest('.lb-next')) { show(index + 1); return; }
+    if (e.target.closest('.lb-prev')) { show(index - 1); return; }
+    if (e.target === lb || e.target.closest('.lb-close')) {
+      lb.hidden = true;
+      img.src = '';
+    }
+  });
+  document.addEventListener('keydown', function(e){
+    if (lb.hidden) return;
+    if (e.key === 'Escape') { lb.hidden = true; img.src=''; }
+    if (e.key === 'ArrowRight') { show(index + 1); }
+    if (e.key === 'ArrowLeft') { show(index - 1); }
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var section = document.getElementById('experience');
+  var expBg = document.querySelector('.exp-bg');
+  var img = expBg && expBg.querySelector('img');
+  if (!section || !img) return;
+  var items = section.querySelectorAll('.tl-item');
+  var target = items.length ? items[items.length - 1] : section;
+  var ticking = false;
+  function update(){
+    ticking = false;
+    var rect = section.getBoundingClientRect();
+    var targetRect = target.getBoundingClientRect();
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    var targetOffset = Math.max((targetRect.top - rect.top) + vh * 0.5, 1);
+    var progress = Math.min(Math.max((vh - rect.top) / targetOffset, 0), 1);
+    var scale = 1.35 - 0.35 * progress;
+    img.style.transform = 'scale(' + scale.toFixed(3) + ')';
+  }
+  function onScroll(){
+    if (!ticking) { window.requestAnimationFrame(update); ticking = true; }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  update();
+})();
+(function(){
+  var heroBg = document.querySelector('.hero-bg');
+  var expBg = document.querySelector('.exp-bg');
+  var heroSection = document.querySelector('header.hero');
+  var expSection = document.getElementById('experience');
+  if (!('IntersectionObserver' in window)) {
+    if (heroBg) heroBg.classList.add('is-active');
+    return;
+  }
+  function watch(section, bg, margin){
+    if (!section || !bg) return;
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        bg.classList.toggle('is-active', entry.isIntersecting);
+      });
+    }, { threshold: 0, rootMargin: margin || '0px 0px -20% 0px' });
+    obs.observe(section);
+  }
+  watch(heroSection, heroBg);
+  watch(expSection, expBg);
+  watch(document.getElementById('lighting1'), document.querySelector('.lighting-bg'));
+  watch(document.getElementById('lighting2'), document.querySelector('.lighting2-bg'), '-72px 0px -50% 0px');
+  watch(document.getElementById('lighting3'), document.querySelector('.lighting3-bg'), '-72px 0px -50% 0px');
+  watch(document.getElementById('lighting4'), document.querySelector('.lighting4-bg'), '-72px 0px -50% 0px');
+  watch(document.getElementById('levelart'), document.querySelector('.levelart-bg'), '-72px 0px -92% 0px');
+  watch(document.getElementById('levelart-panel2'), document.querySelector('.levelart2-bg'), '-72px 0px -50% 0px');
+  watch(document.getElementById('levelart-panel3'), document.querySelector('.levelart3-bg'), '-72px 0px -50% 0px');
+  watch(document.getElementById('levelart-panel4'), document.querySelector('.levelart4-bg'), '-72px 0px -50% 0px');
+  watch(document.getElementById('levelart-panel5'), document.querySelector('.levelart5-bg'), '-72px 0px -50% 0px');
+  watch(document.getElementById('events'), document.querySelector('.events-bg'));
+  watch(document.getElementById('music-part2'), document.querySelector('.music2-bg'));
+  watch(document.getElementById('testimonials'), document.querySelector('.sunset-bg'));
+})();
+</script>
+<script>
+(function(){
+  var els = document.querySelectorAll('.i18n');
+  var saved = null;
+  try { saved = localStorage.getItem('lang'); } catch(e){}
+  var lang = saved === 'fr' ? 'fr' : 'en';
+  function apply(l){
+    els.forEach(function(el){
+      if (!el.dataset.en) el.dataset.en = el.innerHTML;
+      el.innerHTML = l === 'fr' ? el.dataset.fr : el.dataset.en;
+    });
+    document.documentElement.lang = l;
+    try { localStorage.setItem('lang', l); } catch(e){}
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-lang') === l);
+    });
+    lang = l;
+  }
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.addEventListener('click', function(){ apply(b.getAttribute('data-lang')); });
+  });
+  apply(lang);
+})();
+</script>
+<script>
+(function(){
+  var btn = document.getElementById('email-btn');
+  if (!btn) return;
+  btn.addEventListener('click', function(e){
+    e.preventDefault();
+    var addr = btn.getAttribute('data-u') + '@' + btn.getAttribute('data-d');
+    window.location.href = 'mailto:' + addr;
+  });
+})();
+</script>
+<script>
+(function(){
+  document.querySelectorAll('.filmstrip').forEach(function(strip){
+    var items = Array.from(strip.children);
+    if (!items.length) return;
+    var track = document.createElement('div');
+    track.className = 'filmstrip-track';
+    items.forEach(function(el){ track.appendChild(el); });
+    items.forEach(function(el){ track.appendChild(el.cloneNode(true)); });
+    strip.innerHTML = '';
+    strip.appendChild(track);
+    // duration scales with item count so speed stays consistent across strips
+    var duration = Math.max(items.length * 4, 12);
+    track.style.animationDuration = duration + 's';
+  });
+})();
+</script>
+</body></html>
