@@ -1795,57 +1795,66 @@
   update();
 })();
 (function(){
-  var heroBg = document.querySelector('.hero-bg');
-  var expBg = document.querySelector('.exp-bg');
-  var heroSection = document.querySelector('header.hero');
-  var expSection = document.getElementById('experience');
-  if (!('IntersectionObserver' in window)) {
-    if (heroBg) heroBg.classList.add('is-active');
-    return;
+  var g = function(id){ return document.getElementById(id); };
+  var q = function(sel){ return document.querySelector(sel); };
+  var registry = [
+    { sections: [document.querySelector('header.hero')], bg: q('.hero-bg') },
+    { sections: [g('experience')], bg: q('.exp-bg') },
+    { sections: [g('lighting1')], bg: q('.lighting-bg') },
+    { sections: [g('lighting2')], bg: q('.lighting2-bg') },
+    { sections: [g('lighting3')], bg: q('.lighting3-bg') },
+    { sections: [g('lighting4')], bg: q('.lighting4-bg') },
+    { sections: [g('levelart-panel')], bg: q('.levelart-bg') },
+    { sections: [g('levelart-panel2')], bg: q('.levelart2-bg') },
+    { sections: [g('levelart-panel3')], bg: q('.levelart3-bg') },
+    { sections: [g('levelart-panel4')], bg: q('.levelart4-bg') },
+    { sections: [g('levelart-panel5')], bg: q('.levelart5-bg') },
+    { sections: [g('levelart-panel6'), g('levelart-panel7')], bg: q('.levelart6-bg') },
+    { sections: [g('levelart-panel8')], bg: q('.levelart7-bg') },
+    { sections: [g('levelart-panel9')], bg: q('.levelart8-bg') },
+    { sections: [g('levelart-panel10')], bg: q('.levelart9-bg') },
+    { sections: [g('levelart-panel11')], bg: q('.levelart10-bg') },
+    { sections: [g('levelart-panel12')], bg: q('.levelart11-bg') },
+    { sections: [g('levelart-panel13')], bg: q('.levelart12-bg') },
+    { sections: [g('levelart-panel14')], bg: q('.levelart13-bg') },
+    { sections: [g('events')], bg: q('.events-bg') },
+    { sections: [g('music-part2')], bg: q('.music2-bg') },
+    { sections: [g('testimonials')], bg: q('.sunset-bg') }
+  ].filter(function(entry){
+    entry.sections = entry.sections.filter(Boolean);
+    return entry.sections.length && entry.bg;
+  });
+
+  var TRIGGER_LINE = 72 + 160;
+  var ticking = false;
+
+  function update(){
+    ticking = false;
+    var current = null;
+    for (var i = 0; i < registry.length; i++){
+      var entry = registry[i];
+      var top = null;
+      for (var j = 0; j < entry.sections.length; j++){
+        var rect = entry.sections[j].getBoundingClientRect();
+        if (top === null || rect.top < top) top = rect.top;
+      }
+      if (top !== null && top <= TRIGGER_LINE) current = entry.bg;
+    }
+    registry.forEach(function(entry){
+      entry.bg.classList.toggle('is-active', entry.bg === current);
+    });
   }
-  function watch(section, bg, margin){
-    if (!section || !bg) return;
-    var obs = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        bg.classList.toggle('is-active', entry.isIntersecting);
-      });
-    }, { threshold: 0, rootMargin: margin || '0px 0px -20% 0px' });
-    obs.observe(section);
+
+  function onScroll(){
+    if (!ticking){
+      ticking = true;
+      requestAnimationFrame(update);
+    }
   }
-  function watchMulti(sections, bg, margin){
-    sections = sections.filter(Boolean);
-    if (!sections.length || !bg) return;
-    var state = new Map();
-    var obs = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){ state.set(entry.target, entry.isIntersecting); });
-      var anyActive = false;
-      state.forEach(function(v){ if (v) anyActive = true; });
-      bg.classList.toggle('is-active', anyActive);
-    }, { threshold: 0, rootMargin: margin || '0px 0px -20% 0px' });
-    sections.forEach(function(s){ obs.observe(s); });
-  }
-  watch(heroSection, heroBg);
-  watch(expSection, expBg);
-  watch(document.getElementById('lighting1'), document.querySelector('.lighting-bg'));
-  watch(document.getElementById('lighting2'), document.querySelector('.lighting2-bg'), '-72px 0px -50% 0px');
-  watch(document.getElementById('lighting3'), document.querySelector('.lighting3-bg'), '-72px 0px -50% 0px');
-  watch(document.getElementById('lighting4'), document.querySelector('.lighting4-bg'), '-72px 0px -50% 0px');
-  watch(document.getElementById('levelart-panel'), document.querySelector('.levelart-bg'), '-72px 0px -50% 0px');
-  watch(document.getElementById('levelart-panel2'), document.querySelector('.levelart2-bg'), '-72px 0px -50% 0px');
-  watch(document.getElementById('levelart-panel3'), document.querySelector('.levelart3-bg'), '-72px 0px -50% 0px');
-  watch(document.getElementById('levelart-panel4'), document.querySelector('.levelart4-bg'), '-72px 0px -50% 0px');
-  watch(document.getElementById('levelart-panel5'), document.querySelector('.levelart5-bg'), '-72px 0px -50% 0px');
-  watchMulti([document.getElementById('levelart-panel6'), document.getElementById('levelart-panel7')], document.querySelector('.levelart6-bg'), '-72px 0px 0px 0px');
-  watch(document.getElementById('levelart-panel8'), document.querySelector('.levelart7-bg'), '-72px 0px 0px 0px');
-  watch(document.getElementById('levelart-panel9'), document.querySelector('.levelart8-bg'), '-72px 0px 0px 0px');
-  watch(document.getElementById('levelart-panel10'), document.querySelector('.levelart9-bg'), '-72px 0px 0px 0px');
-  watch(document.getElementById('levelart-panel11'), document.querySelector('.levelart10-bg'), '-72px 0px 0px 0px');
-  watch(document.getElementById('levelart-panel12'), document.querySelector('.levelart11-bg'), '-72px 0px 0px 0px');
-  watch(document.getElementById('levelart-panel13'), document.querySelector('.levelart12-bg'), '-72px 0px 0px 0px');
-  watch(document.getElementById('levelart-panel14'), document.querySelector('.levelart13-bg'), '-72px 0px 0px 0px');
-  watch(document.getElementById('events'), document.querySelector('.events-bg'));
-  watch(document.getElementById('music-part2'), document.querySelector('.music2-bg'));
-  watch(document.getElementById('testimonials'), document.querySelector('.sunset-bg'));
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  update();
 })();
 </script>
 <script>
